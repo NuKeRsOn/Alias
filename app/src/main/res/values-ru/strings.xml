@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_over">Игра закончена</string>
+    <string name="teams_empty">Не создано команд!</string>
+
+</resources>

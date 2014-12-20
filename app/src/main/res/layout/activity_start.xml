@@ -1,0 +1,87 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartActivity">
+
+    <TextView
+        android:id="@+id/splash_text"
+        android:textColor="#0000ff"
+        android:textSize="40dp"
+        android:layout_centerInParent="true"
+        android:text="Alias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:id="@+id/menu_holder"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_marginTop="40dp"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"
+            android:id="@+id/menu_header"
+            android:textColor="#0000ff"
+            android:textSize="30dp"
+            android:text="Alias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_centerInParent="true"
+            android:id="@+id/play"
+            android:text="играть"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_below="@+id/play"
+            android:layout_centerInParent="true"
+            android:id="@+id/dictionary"
+            android:visibility="gone"
+            android:text="словари"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_below="@+id/dictionary"
+            android:layout_centerInParent="true"
+            android:id="@+id/settings"
+            android:visibility="gone"
+            android:text="настройки"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/rules_image"
+        android:layout_above="@+id/rules_text"
+        android:src="@drawable/pic3"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+    <TextView
+        android:gravity="center"
+        android:visibility="gone"
+        android:id="@+id/rules_text"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@+id/agree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:id="@+id/agree"
+        android:textColor="#0000ff"
+        android:text="Ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+</RelativeLayout>
