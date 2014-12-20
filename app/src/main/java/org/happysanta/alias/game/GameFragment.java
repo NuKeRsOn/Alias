@@ -37,7 +37,7 @@ public class GameFragment extends Fragment {
     private Timer timer;
     private TimerTask timerTask;
 
-    private int timeRemaining =  3; //30;
+    private int timeRemaining = 30;
     // game
     private boolean gameOver = false;
     AliasTeam currentTeam = new AliasTeam("Одуванчики");
