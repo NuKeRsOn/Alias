@@ -5,9 +5,15 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.Space;
 import android.widget.TextView;
 
 
@@ -15,6 +21,7 @@ import org.happysanta.alias.R;
 import org.happysanta.alias.models.AliasDictionary;
 import org.happysanta.alias.models.AliasTeam;
 import org.happysanta.alias.models.AliasWord;
+import org.happysanta.alias.util.AnimationEndListener;
 
 import java.util.ArrayList;
 import java.util.Timer;
@@ -46,6 +53,7 @@ public class GameFragment extends Fragment {
     private View buttonsHolder;
     private TextView gameOverView;
     private Button nextTeamButton;
+    private Button background;
 
 
     @Override
@@ -56,6 +64,7 @@ public class GameFragment extends Fragment {
         okButton = (Button) gameView.findViewById(R.id.word_ok);
         niokButton = (Button) gameView.findViewById(R.id.word_niok);
         wordView = (TextView) gameView.findViewById(R.id.word);
+        background = (Button) gameView.findViewById(R.id.background);
         timerView = (TextView) gameView.findViewById(R.id.timer);
         buttonsHolder = gameView.findViewById(R.id.buttons_holder);
         gameOverView = (TextView) gameView.findViewById(R.id.game_over);
@@ -64,11 +73,29 @@ public class GameFragment extends Fragment {
         // todo вытаскивать из базы данных
         nextWord();
 
-
         okButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 currentWord.setGuessed(true);
+
+                background.setVisibility(View.VISIBLE);
+                AlphaAnimation backgroundTrueAlphaAnimation = new AlphaAnimation(0, 1);
+                backgroundTrueAlphaAnimation.setDuration(150);
+                backgroundTrueAlphaAnimation.setInterpolator(new DecelerateInterpolator());
+                background.startAnimation(backgroundTrueAlphaAnimation);
+                backgroundTrueAlphaAnimation.setAnimationListener(new AnimationEndListener() {
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+                        AlphaAnimation backgroundTrue2AlphaAnimation = new AlphaAnimation(1, 0);
+                        backgroundTrue2AlphaAnimation.setDuration(150);
+                        backgroundTrue2AlphaAnimation.setInterpolator(new DecelerateInterpolator());
+                        background.startAnimation(backgroundTrue2AlphaAnimation);
+                        background.setVisibility(View.GONE);
+                    }
+                });
+
+
                 nextWord();
             }
         });
@@ -81,7 +108,6 @@ public class GameFragment extends Fragment {
         });
 
         startTimer();
-
 
         return gameView;
     }

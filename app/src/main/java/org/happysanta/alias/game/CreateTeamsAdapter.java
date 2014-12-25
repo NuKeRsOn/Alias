@@ -5,12 +5,14 @@ import android.text.Editable;
 import android.text.InputFilter;
 import android.text.Spanned;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 
+import org.happysanta.alias.R;
 import org.happysanta.alias.models.AliasTeam;
 
 import java.util.ArrayList;
@@ -34,8 +36,11 @@ public class CreateTeamsAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-
+        if (teams.size() == 5) {
+            return 5;
+        }
         return teams.size()+1;
+
     }
 
     @Override
@@ -51,12 +56,16 @@ public class CreateTeamsAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        if (position == getCount()-1){
-            Button button = new Button(context);
+        if (position == teams.size()){
+            Button button = (Button) LayoutInflater.from(context).inflate(R.layout.item_team_add_button, null);
             button.setText("Добавить команду");
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    AliasTeam lastTeam = teams.get(teams.size() - 1);
+                    if (lastTeam.name == null){
+                        return;
+                    }
                     teams.add(new AliasTeam(null));
                     notifyDataSetChanged();
                 }
@@ -64,7 +73,7 @@ public class CreateTeamsAdapter extends BaseAdapter {
             return button;
         }
 
-        EditText editText = new EditText(context);
+        EditText editText = (EditText) LayoutInflater.from(context).inflate(R.layout.item_team_add, null);
         final AliasTeam team = (AliasTeam) getItem(position);
         editText.setText(team.name);
         editText.setHint("Введите имя команды");

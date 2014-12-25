@@ -2,6 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:background="#ffffff"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <ListView
@@ -10,11 +11,13 @@
         android:layout_height="wrap_content">
         </ListView>
     <Button
+        android:textColor="#0000ff"
+        android:background="#ffffff"
         android:id="@+id/play"
-        android:text="начать"
-        android:layout_margin="10dp"
-        android:layout_alignParentRight="true"
+        android:text="Начать игру"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="77dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </RelativeLayout>

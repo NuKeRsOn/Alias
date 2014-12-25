@@ -2,13 +2,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#ffffff"
     android:layout_height="match_parent"
     tools:context=".StartActivity">
 
     <TextView
         android:id="@+id/splash_text"
         android:textColor="#0000ff"
-        android:textSize="40dp"
+        android:textSize="36dp"
         android:layout_centerInParent="true"
         android:text="Alias"
         android:layout_width="wrap_content"
@@ -20,39 +21,48 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TextView
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="66dp"
             android:layout_centerHorizontal="true"
             android:visibility="gone"
             android:id="@+id/menu_header"
             android:textColor="#0000ff"
-            android:textSize="30dp"
+            android:textSize="36dp"
             android:text="Alias"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <Button
+            android:background="#ffffff"
+            android:textSize="15dp"
             android:layout_centerInParent="true"
             android:id="@+id/play"
-            android:text="играть"
+            android:text="Играть"
             android:visibility="gone"
             android:layout_width="wrap_content"
+            android:textColor="#0000ff"
             android:layout_height="wrap_content" />
 
         <Button
+            android:background="#ffffff"
+            android:textColor="#0000ff"
+            android:textSize="15dp"
             android:layout_below="@+id/play"
             android:layout_centerInParent="true"
             android:id="@+id/dictionary"
             android:visibility="gone"
-            android:text="словари"
+            android:text="Словари"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <Button
+            android:background="#ffffff"
+            android:textColor="#0000ff"
+            android:textSize="15dp"
             android:layout_below="@+id/dictionary"
             android:layout_centerInParent="true"
             android:id="@+id/settings"
             android:visibility="gone"
-            android:text="настройки"
+            android:text="Настройки"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -67,6 +77,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp" />
     <TextView
+        android:textSize="36dp"
         android:gravity="center"
         android:visibility="gone"
         android:id="@+id/rules_text"
@@ -76,6 +87,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
+        android:background="#ffffff"
+        android:textSize="15dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:id="@+id/agree"
