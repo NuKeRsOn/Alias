@@ -23,11 +23,20 @@ public class RoundResultFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.result_fragment,container,false);
+        View rootView = inflater.inflate(R.layout.fragment_result,container,false);
+
+        View headerView = inflater.inflate(R.layout.fragment_result_header, null);
+        View footerView = inflater.inflate(R.layout.fragment_result_footer, null);
+
         ListView listView = (ListView) rootView.findViewById(R.id.round_list);
-        listView.setAdapter(new RoundResultAdapter(activity, activity.getTeams()));
-        nextRoundButton = (Button) rootView.findViewById(R.id.next_round);
+        nextRoundButton = (Button) footerView.findViewById(R.id.next_round);
         finishedRoundText = (TextView) rootView.findViewById(R.id.round_finished);
+
+
+        listView.addHeaderView(headerView);
+        listView.addFooterView(footerView);
+        listView.setAdapter(new RoundResultAdapter(activity, activity.getTeams()));
+
         nextRoundButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -43,11 +43,28 @@ public class RoundResultAdapter extends BaseAdapter {
 
         View itemView = activity.getLayoutInflater().inflate(R.layout.item_team_result, null);
 
+        View teamColor = itemView.findViewById(R.id.team_color);
+
         TextView scoreView = (TextView) itemView.findViewById(R.id.score);
         TextView placeView = (TextView) itemView.findViewById(R.id.place);
         TextView nameView = (TextView) itemView.findViewById(R.id.name);
 
         AliasTeam team = (AliasTeam) getItem(position);
+        switch (position){
+            case 1:
+                teamColor.setBackgroundResource(R.drawable.yellow_team);
+                break;
+            case 2:
+                teamColor.setBackgroundResource(R.drawable.green_team);
+                break;
+            case 3:
+                teamColor.setBackgroundResource(R.drawable.blue_team);
+                break;
+            case 4:
+                teamColor.setBackgroundResource(R.drawable.purple_team);
+                break;
+        }
+
 
         scoreView.setText("" + team.words.size());
         placeView.setText("Place " + (position + 1));

@@ -4,4 +4,5 @@
     <color name="all_buttons">#ffffff</color>
     <color name="text_color">#0000ff</color>
     <color name="true_background">#2ecc71</color>
+    <color name="window_background">#fff</color>
 </resources>

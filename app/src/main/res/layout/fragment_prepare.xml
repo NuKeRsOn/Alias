@@ -2,12 +2,14 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:gravity="center_horizontal"
     android:background="#ffffff"
     android:layout_height="match_parent">
     <TextView
+        android:textColor="#017aff"
         android:textSize="20dp"
+        android:layout_marginBottom="8dp"
         android:id="@+id/team"
+        android:layout_centerInParent="true"
         android:text="team %s"
         android:layout_above="@+id/time_remaining"
         android:layout_width="wrap_content"
@@ -16,7 +18,7 @@
         android:textColor="#ff0000"
         android:textSize="15dp"
         android:text="Осталось 5 секунд"
-        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
         android:id="@+id/time_remaining"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

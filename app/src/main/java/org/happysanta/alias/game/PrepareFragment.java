@@ -22,9 +22,8 @@ public class PrepareFragment extends Fragment {
     private TimerTask timerTask;
     private Timer timer;
     private Handler uiThreadHandler;
-    private int timeRemaining = 5;
+    private int timeRemaining = 1;
     private TextView timeRemainingTextView;
-    private int roundNumber;
     private TextView teamView;
     private String teamName;
 
@@ -41,11 +40,9 @@ public class PrepareFragment extends Fragment {
         scheduleTask();
 
         Bundle args = getArguments();
-        roundNumber = args.getInt("round_number");
         teamName = args.getString("team_name");
 
         teamView.setText("Играет команда "+ teamName);
-
         return rootView;
     }
 

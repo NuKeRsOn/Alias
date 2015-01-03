@@ -11,14 +11,12 @@ public class AliasWord {
         this.body = body;
     }
 
-    public void setGuessed(boolean guessed) {
+    public boolean setGuessed(boolean guessed) {
         this.guessed = guessed;
+        return guessed;
     }
 
     public boolean isGuessed() {
-
-
-
         return guessed;
     }
 }

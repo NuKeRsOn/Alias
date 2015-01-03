@@ -24,7 +24,7 @@ public class CreateTeamsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, final Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.create_teams, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_create_teams, container, false);
         ListView listView = (ListView) rootView.findViewById(R.id.list_view);
         adapter= new CreateTeamsAdapter(getActivity());
         listView.setAdapter(adapter);

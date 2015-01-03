@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Button
+    <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="wrap_content"
-    android:layout_width="wrap_content"/>
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/button"
+        android:background="#00ffffff"
+        android:textColor="#007aff"
+        android:textSize="15dp"
+        android:layout_centerVertical="true"
+        android:text="Добавить команду"
+        android:layout_marginLeft="52dp"
+        android:layout_height="20dp"
+        android:layout_width="wrap_content"/>
+    <View
+        android:layout_below="@+id/button"
+        android:background="#dbdbdb"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="53dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+    <ImageView
+        android:id="@+id/team_color"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/add_team"
+        android:layout_centerVertical="true"
+        android:layout_width="23dp"
+        android:layout_height="23dp" />
+    </RelativeLayout>

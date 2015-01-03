@@ -1,5 +1,6 @@
 package org.happysanta.alias.game;
 
+import android.app.Activity;
 import android.content.Context;
 import android.text.Editable;
 import android.text.InputFilter;
@@ -23,9 +24,11 @@ import java.util.ArrayList;
 public class CreateTeamsAdapter extends BaseAdapter {
     private ArrayList<AliasTeam> teams;
     private android.content.Context context;
+    private Activity activity;
 
 
     public CreateTeamsAdapter(Context context) {
+        this.activity = (Activity) context;
         this.context = context;
         this.teams = new ArrayList<AliasTeam>();
 
@@ -56,9 +59,11 @@ public class CreateTeamsAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
+
+
         if (position == teams.size()){
-            Button button = (Button) LayoutInflater.from(context).inflate(R.layout.item_team_add_button, null);
-            button.setText("Добавить команду");
+            View buttonHolder = LayoutInflater.from(context).inflate(R.layout.item_team_add_button, null);
+            Button button = (Button) buttonHolder.findViewById(R.id.button);
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -70,13 +75,27 @@ public class CreateTeamsAdapter extends BaseAdapter {
                     notifyDataSetChanged();
                 }
             });
-            return button;
+            return buttonHolder;
         }
-
-        EditText editText = (EditText) LayoutInflater.from(context).inflate(R.layout.item_team_add, null);
+        View editTextHolder = LayoutInflater.from(context).inflate(R.layout.item_team_add, null);
+        EditText editText = (EditText) editTextHolder.findViewById(R.id.text);
+        View teamColor = editTextHolder.findViewById(R.id.team_color);
+        switch (position){
+            case 1:
+                teamColor.setBackgroundResource(R.drawable.yellow_team);
+                break;
+            case 2:
+                teamColor.setBackgroundResource(R.drawable.green_team);
+                break;
+            case 3:
+                teamColor.setBackgroundResource(R.drawable.blue_team);
+                break;
+            case 4:
+                teamColor.setBackgroundResource(R.drawable.purple_team);
+                break;
+        }
         final AliasTeam team = (AliasTeam) getItem(position);
         editText.setText(team.name);
-        editText.setHint("Введите имя команды");
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -102,7 +121,7 @@ public class CreateTeamsAdapter extends BaseAdapter {
             }
         } });
 
-        return editText;
+        return editTextHolder;
     }
 
     public ArrayList<AliasTeam> getTeams() {

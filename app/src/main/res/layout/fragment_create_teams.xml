@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:text="Создайте команды"
+        android:textSize="16sp"
+        android:textColor="#666"
+        android:layout_marginTop="77dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ListView
+        android:id="@+id/list_view"
+        android:dividerHeight="1dp"
+        android:divider="#00000000"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:textColor="#1284ff"
+        android:background="#00ffffff"
+        android:id="@+id/play"
+        android:text="Начать игру"
+        android:textSize="16sp"
+        android:drawableRight="@drawable/ic_launcher"
+        android:layout_marginBottom="77dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

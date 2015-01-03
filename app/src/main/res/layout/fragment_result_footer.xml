@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="44dp"
+        android:textSize="11sp"
+        android:text="Расскажите друзьям о результате"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/ic_launcher"
+            android:id="@+id/vkButton"
+            android:layout_marginLeft="22dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp" />
+
+        <ImageView
+            android:src="@drawable/ic_launcher"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/facebookButton"
+            android:layout_toRightOf="@+id/vkButton"
+            android:layout_width="90dp"
+            android:layout_height="90dp" />
+
+        <ImageView
+            android:src="@drawable/ic_launcher"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/twitterButton"
+            android:layout_toRightOf="@+id/facebookButton"
+            android:layout_width="90dp"
+            android:layout_height="90dp" />
+    </RelativeLayout>
+
+    <Button
+        android:layout_marginTop="52dp"
+        android:textSize="13dp"
+        android:layout_marginLeft="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:textColor="#017aff"
+        android:background="#00ffffff"
+        android:text="Новая игра"
+        android:id="@+id/next_round"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp" />
+
+    <View
+        android:layout_marginLeft="16dp"
+        android:background="#dbdbdb"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp" />
+
+
+</LinearLayout>
