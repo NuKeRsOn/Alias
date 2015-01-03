@@ -8,5 +8,6 @@
     <string name="game_over">Game over</string>
     <string name="teams_empty">There are no teams!</string>
     <string name="title_activity_dictionaries">DictionariesActivity</string>
+    <string name="timer_remaing">0:%d</string>
 
 </resources>
