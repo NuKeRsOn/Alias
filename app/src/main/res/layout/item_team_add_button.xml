@@ -23,7 +23,8 @@
     <ImageView
         android:id="@+id/team_color"
         android:layout_marginLeft="15dp"
-        android:background="@drawable/add_team"
+        android:src="@drawable/v_green"
+        android:background="@drawable/plus_button"
         android:layout_centerVertical="true"
         android:layout_width="23dp"
         android:layout_height="23dp" />

@@ -24,11 +24,12 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:textColor="#1284ff"
+        android:gravity="center"
         android:background="#00ffffff"
         android:id="@+id/play"
         android:text="Начать игру"
         android:textSize="16sp"
-        android:drawableRight="@drawable/ic_launcher"
+        android:drawableRight="@drawable/forward"
         android:layout_marginBottom="77dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

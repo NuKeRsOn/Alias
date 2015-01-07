@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import org.happysanta.alias.R;
 import org.happysanta.alias.models.AliasTeam;
+import org.happysanta.alias.models.AliasWord;
 
 import java.util.ArrayList;
 
@@ -18,6 +19,7 @@ public class RoundResultAdapter extends BaseAdapter {
 
     private final Activity activity;
     private final ArrayList<AliasTeam> teams;
+    private AliasWord currentWord;
 
     public RoundResultAdapter(Activity activity, ArrayList<AliasTeam> teams){
         this.activity = activity;
@@ -31,6 +33,7 @@ public class RoundResultAdapter extends BaseAdapter {
     @Override
     public Object getItem(int position) {
         return teams.get(position);
+
     }
 
     @Override
@@ -65,8 +68,14 @@ public class RoundResultAdapter extends BaseAdapter {
                 break;
         }
 
+        int wordsCounter =0;
+        for (AliasWord word : team.words) {
+            if (word.isGuessed()) {
+                wordsCounter++;
+            }
+        }
 
-        scoreView.setText("" + team.words.size());
+        scoreView.setText("" + wordsCounter);
         placeView.setText("Place " + (position + 1));
         nameView.setText(team.name);
 

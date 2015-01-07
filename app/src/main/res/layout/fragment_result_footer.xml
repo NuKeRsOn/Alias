@@ -19,24 +19,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:src="@drawable/ic_launcher"
+        <ImageButton
+            android:background="#00ffffff"
+            android:scaleType="centerCrop"
+            android:src="@drawable/vk"
             android:id="@+id/vkButton"
             android:layout_marginLeft="22dp"
             android:layout_width="90dp"
             android:layout_height="90dp" />
 
-        <ImageView
-            android:src="@drawable/ic_launcher"
+        <ImageButton
+            android:background="#00ffffff"
+            android:src="@drawable/fb"
             android:layout_marginLeft="5dp"
             android:id="@+id/facebookButton"
             android:layout_toRightOf="@+id/vkButton"
+            android:scaleType="centerCrop"
             android:layout_width="90dp"
             android:layout_height="90dp" />
 
-        <ImageView
-            android:src="@drawable/ic_launcher"
+        <ImageButton
+            android:background="#00ffffff"
+            android:src="@drawable/twitter"
             android:layout_marginLeft="5dp"
+            android:scaleType="centerCrop"
             android:id="@+id/twitterButton"
             android:layout_toRightOf="@+id/facebookButton"
             android:layout_width="90dp"
@@ -63,5 +69,25 @@
         android:layout_width="wrap_content"
         android:layout_height="1dp" />
 
+    <Button
+        android:id="@+id/replay"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="16dp"
+        android:textSize="13dp"
+        android:textColor="#017aff"
+        android:background="#00ffffff"
+        android:text="Повторить"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp" />
+
+    <View
+        android:layout_marginLeft="16dp"
+        android:background="#dbdbdb"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp" />
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"/>
 
 </LinearLayout>

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -26,8 +27,8 @@ import java.util.TimerTask;
 public class GameFragment extends Fragment {
 
     private TextView wordView;
-    private Button okButton;
-    private Button niokButton;
+    private ImageButton okButton;
+    private ImageButton niokButton;
     private TextView timerTextView;
     private ProgressBar timerProgressView;
     private View teamText;
@@ -48,19 +49,21 @@ public class GameFragment extends Fragment {
     private TextView gameOverView;
     private Button nextTeamButton;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View gameView = inflater.inflate(R.layout.fragment_game, container, false);
         teamText = gameView.findViewById(R.id.text_team);
         nextTeamButton = (Button) gameView.findViewById(R.id.next_team);
-        okButton = (Button) gameView.findViewById(R.id.word_ok);
-        niokButton = (Button) gameView.findViewById(R.id.word_niok);
+        okButton = (ImageButton) gameView.findViewById(R.id.word_ok);
+        niokButton = (ImageButton) gameView.findViewById(R.id.word_niok);
         wordView = (TextView) gameView.findViewById(R.id.word);
         timerTextView = (TextView) gameView.findViewById(R.id.timer_text);
         timerProgressView = (ProgressBar) gameView.findViewById(R.id.timer_progress);
         buttonsHolder = gameView.findViewById(R.id.buttons_holder);
         gameOverView = (TextView) gameView.findViewById(R.id.game_over);
 
+        currentTeam = activity.getCurrentTeam();
         dictionary = activity.getDictionary();
         // todo вытаскивать из базы данных
         nextWord();
@@ -107,6 +110,7 @@ public class GameFragment extends Fragment {
                             scheduleTask();
                             timerProgressView.setProgress(100 / roundTime * (roundTime - timeRemaining));
                             timerTextView.setText(""+timeRemaining);
+                            timerTextView.setVisibility(View.GONE);
                         }else{
                             gameOver();
                         }

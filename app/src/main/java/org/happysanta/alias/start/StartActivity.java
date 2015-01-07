@@ -28,8 +28,8 @@ import org.happysanta.alias.util.AnimationEndListener;
 
 public class StartActivity extends Activity {
 
-    private TextView startTextView;
-    private TextView topTextView;
+    private ImageView startTextView;
+    private ImageView topTextView;
     private Button settingButton;
     private Button dictionaryButton;
     private Button playButton;
@@ -43,8 +43,8 @@ public class StartActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
         settingButton = (Button) findViewById(R.id.settings);
-        startTextView = (TextView) findViewById(R.id.splash_text);
-        topTextView = (TextView) findViewById(R.id.menu_header);
+        startTextView = (ImageView) findViewById(R.id.splash_text);
+        topTextView = (ImageView) findViewById(R.id.menu_header);
         rulesTextView = (TextView) findViewById(R.id.rules_text);
         rulesImageView = (ImageView) findViewById(R.id.rules_image);
         rulesAgreeButton = (Button) findViewById(R.id.agree);

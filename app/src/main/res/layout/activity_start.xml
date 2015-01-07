@@ -6,12 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".StartActivity">
 
-    <TextView
+    <ImageView
+        android:src="@drawable/alias"
         android:id="@+id/splash_text"
         android:textColor="#0000ff"
-        android:textSize="36dp"
         android:layout_centerInParent="true"
-        android:text="Alias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <RelativeLayout
@@ -20,16 +19,15 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TextView
+        <ImageView
+            android:src="@drawable/alias"
             android:layout_marginTop="66dp"
             android:layout_centerHorizontal="true"
             android:visibility="gone"
             android:id="@+id/menu_header"
             android:textColor="#0000ff"
-            android:textSize="36dp"
-            android:text="Alias"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="35dp" />
 
         <Button
             android:background="#ffffff"

@@ -1,11 +1,13 @@
 package org.happysanta.alias.game;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.os.Message;
 
 import org.happysanta.alias.R;
+import org.happysanta.alias.dictionaries.Dictionaries;
 import org.happysanta.alias.models.AliasDictionary;
 import org.happysanta.alias.models.AliasTeam;
 import org.happysanta.alias.models.AliasWord;
@@ -23,6 +25,7 @@ public class GameActivity extends Activity {
     private int currentTeamIndex;
     private AliasDictionary dictionary;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,16 +35,7 @@ public class GameActivity extends Activity {
                     .add(R.id.container, new CreateTeamsFragment())
                     .commit();
         }
-        dictionary = new AliasDictionary(new ArrayList<AliasWord>(){{
-            add(new AliasWord("Вася"));
-            add(new AliasWord("Петя"));
-            add(new AliasWord("Маша"));
-            add(new AliasWord("Козя"));
-            add(new AliasWord("Ника"));
-            add(new AliasWord("Дура"));
-            add(new AliasWord("Котя"));
-        }});
-
+        dictionary = Dictionaries.getAll(this);
     }
 
 
@@ -52,14 +46,14 @@ public class GameActivity extends Activity {
         playRound();
     }
 
-    private void playRound() {
+    public void playRound() {
         PrepareFragment fragment = new PrepareFragment();
         Bundle args = new Bundle();
         args.putString("team_name", currentTeam.name);
         fragment.setArguments(args);
         getFragmentManager().beginTransaction()
                 .replace(R.id.container, fragment)
-                .commit();
+                    .commit();
     }
 
     public void ready() {
@@ -95,5 +89,9 @@ public class GameActivity extends Activity {
 
     public ArrayList<AliasTeam> getTeams() {
         return teams;
+    }
+
+    public AliasTeam getCurrentTeam() {
+        return currentTeam;
     }
 }

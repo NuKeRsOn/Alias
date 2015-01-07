@@ -40,6 +40,7 @@ public class CreateTeamsFragment extends Fragment {
                 }
             }
         });
+
         return rootView;
     }
 
