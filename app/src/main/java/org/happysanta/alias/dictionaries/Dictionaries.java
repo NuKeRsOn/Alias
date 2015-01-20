@@ -15,8 +15,8 @@ import java.util.ArrayList;
  * Created by Jesus Christ. Amen.
  */
 public class Dictionaries {
-    public static AliasDictionary getAll(Context context) {
-        InputStream inputStream = context.getResources().openRawResource(R.raw.dictionary);
+    public static AliasDictionary getAll(Context context, int rawId) {
+        InputStream inputStream = context.getResources().openRawResource(rawId);
         String dictionaryString = getStringFromStream(inputStream);
         String[] dictionaryArray = dictionaryString.split("\n");
         ArrayList<AliasWord> words = new ArrayList<>();
@@ -40,7 +40,6 @@ public class Dictionaries {
             }
             inputStream.close();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 

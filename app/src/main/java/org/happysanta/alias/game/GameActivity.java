@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 public class GameActivity extends Activity {
@@ -35,7 +36,11 @@ public class GameActivity extends Activity {
                     .add(R.id.container, new CreateTeamsFragment())
                     .commit();
         }
-        dictionary = Dictionaries.getAll(this);
+        if (Locale.getDefault().getISO3Language().equals("eng") ){
+            dictionary = Dictionaries.getAll(this, R.raw.words_en);
+        }else{
+            dictionary = Dictionaries.getAll(this, R.raw.words_ru);
+        }
     }
 
 
@@ -58,13 +63,14 @@ public class GameActivity extends Activity {
 
     public void ready() {
         // какая команда играет, какой раунд
+        //todo Слова при новой загрузке
         getFragmentManager().beginTransaction()
                 .replace(R.id.container, new GameFragment())
                 .commit();
 
     }
 
-    public void played() {
+    public boolean played() {
         currentTeamIndex++;
         if(currentTeamIndex==teams.size()){
             currentTeamIndex = 0;
@@ -72,10 +78,12 @@ public class GameActivity extends Activity {
             getFragmentManager().beginTransaction()
                     .replace(R.id.container, new RoundResultFragment())
                     .commit();
+
         } else {
             this.currentTeam = teams.get(currentTeamIndex);
             playRound();
         }
+        return false;
     }
 
     public void roundResultViewed() {
@@ -93,5 +101,9 @@ public class GameActivity extends Activity {
 
     public AliasTeam getCurrentTeam() {
         return currentTeam;
+    }
+
+    public int getCurrentTeamIndex() {
+        return currentTeamIndex;
     }
 }

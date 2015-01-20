@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by Jesus Christ. Amen.
  */
-public class AliasTeam{
+public class AliasTeam {
 
     public String name;
     public ArrayList<AliasWord> words= new ArrayList<AliasWord>();

@@ -9,7 +9,6 @@
         android:id="@+id/text"
         android:textSize="13dp"
         android:textColor="#484848"
-        android:text="[eq"
         android:hint="Название команды"
         android:padding="0dp"
         android:textColorHint="#b3b3b3"

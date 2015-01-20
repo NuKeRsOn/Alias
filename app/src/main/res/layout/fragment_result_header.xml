@@ -15,6 +15,7 @@
     <TextView
         android:id="@+id/round_finished"
         android:textSize="30dp"
+        android:textColor="#2c3e50"
         android:layout_marginTop="23dp"
         android:layout_centerHorizontal="true"
         android:text="Результаты"

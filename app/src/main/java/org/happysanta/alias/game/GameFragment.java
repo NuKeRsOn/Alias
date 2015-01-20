@@ -18,14 +18,17 @@ import org.happysanta.alias.models.AliasDictionary;
 import org.happysanta.alias.models.AliasTeam;
 import org.happysanta.alias.models.AliasWord;
 
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
 /**
  * Created by Jesus Christ. Amen.
  */
-public class GameFragment extends Fragment {
+public class  GameFragment extends Fragment {
 
+
+    private ArrayList<AliasTeam> teams;
     private TextView wordView;
     private ImageButton okButton;
     private ImageButton niokButton;
@@ -90,7 +93,6 @@ public class GameFragment extends Fragment {
 
     private void startTimer() {
         uiThreadHandler = new Handler();
-
         timer = new Timer();
         scheduleTask();
 
@@ -116,7 +118,6 @@ public class GameFragment extends Fragment {
                         }
                     }
                 });
-
             }
         };
         timer.schedule(timerTask, 1000);
@@ -138,15 +139,23 @@ public class GameFragment extends Fragment {
         buttonsHolder.setVisibility(View.GONE);
         nextTeamButton.setVisibility(View.VISIBLE);
         gameOverView.setVisibility(View.VISIBLE);
+
         if (timeRemaining==0) {
             gameOverView.setText("Время закончилось");
         }else{
             gameOverView.setText("Закончились слова");
         }
+        if (activity.getTeams().size() == activity.getCurrentTeamIndex()+1){
+            nextTeamButton.setText("Показать результаты");
+        }else{
+            nextTeamButton.setText("Ход другой команды");
+        }
+        //todo Показать результате, когда заканчиваются слова
         nextTeamButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 activity.played();
+
             }
         });
 

@@ -118,6 +118,6 @@ public class RoundResultFragment extends Fragment {
 
     private void again(){
         GameActivity prepareFragment = (GameActivity) getActivity();
-        prepareFragment.playRound();
+        prepareFragment.ready();
     }
 }

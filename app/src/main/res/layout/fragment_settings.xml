@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#efeff4"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:background="#ffffff"
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_marginLeft="22dp"
+
+            android:gravity="center_vertical"
+            android:textSize="12sp"
+            android:text="Правила"
+            android:background="#ffffff"
+            android:id="@+id/rules"
+            android:layout_width="match_parent"
+            android:layout_height="44dp" />
+        <View
+            android:layout_below="@+id/rules"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:background="#c8c7cc"
+            android:layout_width="match_parent"
+            android:id="@+id/first_view"
+            android:layout_height="1dp"/>
+        <Button
+            android:textSize="12sp"
+            android:gravity="center_vertical"
+            android:text="О приложении"
+            android:layout_marginLeft="22dp"
+            android:id="@+id/about"
+            android:layout_below="@+id/first_view"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="44dp" />
+        </RelativeLayout>
+
+
+</LinearLayout>
