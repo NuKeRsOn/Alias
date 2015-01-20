@@ -19,7 +19,7 @@
         <activity
             android:name="org.happysanta.alias.game.GameActivity"
             android:label="@string/title_activity_game"
-            android:windowSoftInputMode="adjustNothing" >
+            android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
             android:name="org.happysanta.alias.settings.SettingsActivity"
