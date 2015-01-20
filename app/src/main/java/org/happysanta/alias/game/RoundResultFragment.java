@@ -3,14 +3,13 @@ package org.happysanta.alias.game;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
-import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -66,12 +65,19 @@ public class RoundResultFragment extends Fragment {
         twitterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent shareIntent = new Intent();
-                shareIntent.setAction(Intent.ACTION_SEND);
-                shareIntent.putExtra(Intent.EXTRA_TEXT, "ссылка на игру");
-                shareIntent.putExtra(Intent.EXTRA_SUBJECT,"А я поиграл в Alias на андроид!");
-                shareIntent.setType("text/plain");
-                getActivity().startActivity(Intent.createChooser(shareIntent, "Поделиться"));
+                try {
+                    getActivity().getPackageManager().getPackageInfo("com.twitter.android", 0);
+                    Intent intent = new Intent(Intent.ACTION_SEND);
+                    intent.setClassName("com.twitter.android", "com.twitter.android.composer.ComposerActivity");
+                    intent.setType("text/plain");
+                    intent.putExtra(Intent.EXTRA_TEXT, "Alias for android!\ngoogle.com");
+                    startActivity(intent);
+                }catch (Exception exp){
+                    String url = "http://www.twitter.com/intent/tweet?url=google.com&text=Alias for android!";
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);
+                }
             }
         });
 
