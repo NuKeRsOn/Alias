@@ -41,7 +41,7 @@ public class  GameFragment extends Fragment {
     private Handler uiThreadHandler;
     private Timer timer;
     private TimerTask timerTask;
-    private int roundTime = 30;
+    private int roundTime = 60;
     private int timeRemaining = roundTime;
     // game
     private boolean gameOver = false;
@@ -66,9 +66,14 @@ public class  GameFragment extends Fragment {
         buttonsHolder = gameView.findViewById(R.id.buttons_holder);
         gameOverView = (TextView) gameView.findViewById(R.id.game_over);
 
+        // todo вытаскиваем время раунда из настроек
+        if(roundTime==60) {
+            timerTextView.setText("1:00");
+        } else {
+            timerTextView.setText("0:"+ roundTime);
+        }
         currentTeam = activity.getCurrentTeam();
         dictionary = activity.getDictionary();
-        // todo вытаскивать из базы данных
         nextWord();
 
         okButton.setOnClickListener(new View.OnClickListener() {
@@ -110,10 +115,14 @@ public class  GameFragment extends Fragment {
                         timeRemaining--;
                         if(timeRemaining>0) {
                             scheduleTask();
-                            timerProgressView.setProgress(100 / roundTime * (roundTime - timeRemaining));
-                            timerTextView.setText(""+timeRemaining);
-                            timerTextView.setVisibility(View.GONE);
-                        }else{
+                            timerProgressView.setProgress((int) (100f /  roundTime * (roundTime - timeRemaining)));
+                            if (timeRemaining > 9) {
+                                timerTextView.setText("0:" + timeRemaining);
+                            } else {
+                                timerTextView.setText("0:0" + timeRemaining);
+                            }
+
+                        } else {
                             gameOver();
                         }
                     }
