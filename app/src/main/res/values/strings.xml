@@ -7,7 +7,14 @@
     <string name="title_activity_game">GameActivity</string>
     <string name="game_over">Game over</string>
     <string name="teams_empty">There are no teams!</string>
-    <string name="title_activity_dictionaries">DictionariesActivity</string>
+    <string name="dictionaries_activity_title">DictionariesActivity</string>
     <string name="timer_remaing">0:%d</string>
+    <string name="dictionary_sex">Секс и отношения</string>
+    <string name="dictionary_count">%d слов</string>
+    <string name="dictionary_geo">Города и страны</string>
+    <string name="dictionary_rate">Rate the app</string>
+    <string name="dictionary_basic_1">Basic 1</string>
+    <string name="dictionary_basic_2">Basic 2</string>
+    <string name="dictionary_all">Все словари</string>
 
 </resources>

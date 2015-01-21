@@ -28,8 +28,7 @@
         </activity>
         <activity
             android:name="org.happysanta.alias.dictionaries.DictionariesActivity"
-            android:label="@string/title_activity_dictionaries"
-            android:theme="@style/AppTheme" >
+            android:label="@string/dictionaries_activity_title" >
         </activity>
     </application>
 

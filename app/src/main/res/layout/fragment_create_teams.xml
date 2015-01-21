@@ -5,14 +5,13 @@
     android:background="#ffffff"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
+    <ImageView
+        android:src="@drawable/alias"
+        android:layout_marginTop="66dp"
         android:layout_centerHorizontal="true"
-        android:text="Создайте команды"
-        android:textSize="16sp"
-        android:textColor="#666"
-        android:layout_marginTop="77dp"
+        android:id="@+id/menu_header"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="56dp" />
     <ListView
         android:id="@+id/list_view"
         android:dividerHeight="1dp"
@@ -29,8 +28,16 @@
         android:id="@+id/play"
         android:text="Начать игру"
         android:textSize="16sp"
-        android:drawableRight="@drawable/forward"
         android:layout_marginBottom="77dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:paddingTop="2dp"
+        android:layout_marginLeft="3dp"
+        android:layout_alignTop="@+id/play"
+        android:layout_alignBottom="@+id/play"
+        android:layout_toRightOf="@+id/play"
+        android:src="@drawable/forward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </RelativeLayout>

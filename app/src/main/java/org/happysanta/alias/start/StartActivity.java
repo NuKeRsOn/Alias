@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
@@ -19,9 +18,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.happysanta.alias.game.CreateTeamsFragment;
-import org.happysanta.alias.game.GameActivity;
 import org.happysanta.alias.R;
+import org.happysanta.alias.dictionaries.DictionariesActivity;
+import org.happysanta.alias.game.GameActivity;
 import org.happysanta.alias.settings.SettingsActivity;
 import org.happysanta.alias.util.AnimationEndListener;
 
@@ -58,6 +57,12 @@ public class StartActivity extends Activity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getBaseContext(), GameActivity.class));
+            }
+        });
+        dictionaryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), DictionariesActivity.class));
             }
         });
         settingButton.setOnClickListener(new View.OnClickListener() {
