@@ -73,3 +73,7 @@ $RECYCLE.BIN/
 *.lnk
 
 .idea
+/.idea
+.idea/
+/.idea/
+*.iml
