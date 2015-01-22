@@ -2,29 +2,19 @@ package org.happysanta.alias.settings;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
+import android.preference.PreferenceFragment;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 
 import org.happysanta.alias.R;
 
 /**
  * Created by Jesus Christ. Amen.
  */
-public class SettingsFragment extends Fragment {
+public class SettingsFragment extends PreferenceFragment {
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
-        Button rulesButton = (Button) rootView.findViewById(R.id.rules);
-        Button aboutButton = (Button) rootView.findViewById(R.id.about);
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-
-
-
-
-        return rootView;
-
+        addPreferencesFromResource(R.xml.pref_general);
     }
 }

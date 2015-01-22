@@ -41,7 +41,7 @@ public class  GameFragment extends Fragment {
     private Handler uiThreadHandler;
     private Timer timer;
     private TimerTask timerTask;
-    private int roundTime = 60;
+    private int roundTime = 2;
     private int timeRemaining = roundTime;
     // game
     private boolean gameOver = false;
