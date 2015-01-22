@@ -1,5 +1,7 @@
 package org.happysanta.alias.dictionaries;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -11,15 +13,29 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.anjlab.android.iab.v3.BillingProcessor;
+import com.anjlab.android.iab.v3.TransactionDetails;
+
 import org.happysanta.alias.R;
 
-public class DictionariesActivity extends ActionBarActivity {
+public class DictionariesActivity extends ActionBarActivity implements BillingProcessor.IBillingHandler {
 
-    private static final int DICTIONARY_GEO = 1;
-    private static final int DICTIONARY_BASIC_1 = 2;
-    private static final int DICTIONARY_BASIC_2 = 3;
-    private static final int DICTIONARY_ALL = 4;
+    private static final String DICTIONARY_GEO = "geo";
+    private static final String DICTIONARY_BASIC_1 = "b1";
+    private static final String DICTIONARY_BASIC_2 = "b2";
+    private static final String DICTIONARY_ALL = "all";
+    private static final String DICTIONARY_SEX = "sex";
+    private BillingProcessor billingProcessor;
+    private DictionariesAdapter adapter = new DictionariesAdapter();
+    private SharedPreferences prefs;
 
+    @Override
+    public void onDestroy() {
+        if (billingProcessor != null)
+            billingProcessor.release();
+
+        super.onDestroy();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,9 +44,11 @@ public class DictionariesActivity extends ActionBarActivity {
         toolbar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
         setSupportActionBar(toolbar);
 
+        prefs = getSharedPreferences("dictionaries", MODE_MULTI_PROCESS);
+
 
         ListView dictionariesList = (ListView) findViewById(R.id.dictionaries);
-        dictionariesList.setAdapter(new DictionariesAdapter());
+        dictionariesList.setAdapter(adapter);
         dictionariesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -38,6 +56,7 @@ public class DictionariesActivity extends ActionBarActivity {
                     case 0:
                         // todo rate the app
                         // buy(DICTIONARY_SEX);
+
                         break;
                     case 1:
                         buy(DICTIONARY_GEO);
@@ -54,9 +73,37 @@ public class DictionariesActivity extends ActionBarActivity {
                 }
             }
         });
+        // todo billing key
+        billingProcessor = new BillingProcessor(this, "YOUR LICENSE KEY FROM GOOGLE PLAY CONSOLE HERE", this);
+
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (!billingProcessor.handleActivityResult(requestCode, resultCode, data))
+            super.onActivityResult(requestCode, resultCode, data);
+    }
+    private void buy(String dictionaryCode) {
+        billingProcessor.purchase(this, dictionaryCode);
     }
 
-    private void buy(int dictionaryCode) {
+    @Override
+    public void onProductPurchased(String productId, TransactionDetails transactionDetails) {
+        prefs.edit().putBoolean(productId, true).apply();
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onPurchaseHistoryRestored() {
+
+    }
+
+    @Override
+    public void onBillingError(int errorCode, Throwable throwable) {
+
+    }
+
+    @Override
+    public void onBillingInitialized() {
 
     }
 
@@ -73,6 +120,14 @@ public class DictionariesActivity extends ActionBarActivity {
         }
 
         @Override
+        public boolean isEnabled(int position) {
+            if(position==0){
+                return true;
+            }
+            return !dictionaryActivated(position) && billingProcessor.isInitialized();
+        }
+
+        @Override
         public long getItemId(int position) {
             return 0;
         }
@@ -83,12 +138,14 @@ public class DictionariesActivity extends ActionBarActivity {
 
             TextView titleView = (TextView) dictionaryView.findViewById(R.id.title);
             TextView costView = (TextView) dictionaryView.findViewById(R.id.cost);
+            View addedView = dictionaryView.findViewById(R.id.added);
             TextView countView = (TextView) dictionaryView.findViewById(R.id.count);
             // todo проверка на наличие
             switch (position) {
                 case 0:
                     titleView.setText(R.string.dictionary_sex);
                     costView.setText(R.string.dictionary_rate);
+
                     countView.setText(getString(R.string.dictionary_count, 100));
                     break;
                 case 1:
@@ -112,9 +169,43 @@ public class DictionariesActivity extends ActionBarActivity {
                     countView.setText(getString(R.string.dictionary_count, 1700));
                     break;
             }
+            if(dictionaryActivated(position)) {
+                costView.setVisibility(View.INVISIBLE);
+                addedView.setVisibility(View.VISIBLE);
+            }
 
             return dictionaryView;
         }
+    }
+
+    private boolean dictionaryActivated(int position) {
+
+        if (prefs.getBoolean("all",false)){
+            return true;
+        }
+
+        String dictionaryCode = "";
+        switch (position) {
+            case 0:
+                dictionaryCode = DICTIONARY_SEX;
+                break;
+            case 1:
+                dictionaryCode = DICTIONARY_GEO;
+                break;
+            case 2:
+                dictionaryCode = DICTIONARY_BASIC_1;
+                break;
+            case 3:
+                dictionaryCode = DICTIONARY_BASIC_2;
+                break;
+            case 4:
+                return prefs.getBoolean(DICTIONARY_BASIC_1, false)
+                        && prefs.getBoolean(DICTIONARY_BASIC_2, false)
+                        && prefs.getBoolean(DICTIONARY_GEO, false);
+        }
+
+        return prefs.getBoolean(dictionaryCode, false);
+
     }
 
     @Override
