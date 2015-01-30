@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.os.Message;
+import android.provider.UserDictionary;
 
 import org.happysanta.alias.R;
 import org.happysanta.alias.dictionaries.Dictionaries;
@@ -63,7 +64,6 @@ public class GameActivity extends Activity {
 
     public void ready() {
         // какая команда играет, какой раунд
-        //todo Слова при новой загрузке
         getFragmentManager().beginTransaction()
                 .replace(R.id.container, new GameFragment())
                 .commit();
@@ -89,7 +89,6 @@ public class GameActivity extends Activity {
     public void roundResultViewed() {
         finish();
     }
-
 
     public AliasDictionary getDictionary() {
        return dictionary;

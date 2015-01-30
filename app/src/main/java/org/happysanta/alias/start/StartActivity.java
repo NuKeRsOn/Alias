@@ -122,8 +122,6 @@ public class StartActivity extends Activity {
         settingButton.setVisibility(View.VISIBLE);
         playButton.setVisibility(View.VISIBLE);
 
-
-
         if (topTextView.getVisibility()!=View.VISIBLE) {
             topTextView.setVisibility(View.VISIBLE);
             AlphaAnimation topTextViewAlphaAnimation = new AlphaAnimation(0, 1);
@@ -150,10 +148,7 @@ public class StartActivity extends Activity {
         dictionaryButtonAlphaAnimation.setDuration(900);
         dictionaryButtonAlphaAnimation.setInterpolator(new DecelerateInterpolator());
         dictionaryButton.startAnimation(dictionaryButtonAlphaAnimation);
-
-
     }
-
     private void showFirstRule() {
         rulesAgreeButton.setVisibility(View.VISIBLE);
         topTextView.setVisibility(View.VISIBLE);

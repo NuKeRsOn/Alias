@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"/>
     <View
         android:layout_below="@+id/button"
-        android:background="#dbdbdb"
+            android:background="#dbdbdb"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="53dp"
         android:layout_width="match_parent"

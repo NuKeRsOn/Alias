@@ -9,7 +9,7 @@
         android:layout_centerHorizontal="true"
         android:text="Создайте команды"
         android:textSize="16sp"
-        android:textColor="#666"
+        android:textColor="#444"
         android:layout_marginTop="77dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

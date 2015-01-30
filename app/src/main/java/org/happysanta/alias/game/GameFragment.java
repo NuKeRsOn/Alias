@@ -18,6 +18,8 @@ import org.happysanta.alias.models.AliasDictionary;
 import org.happysanta.alias.models.AliasTeam;
 import org.happysanta.alias.models.AliasWord;
 
+import java.io.IOError;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -68,7 +70,6 @@ public class  GameFragment extends Fragment {
 
         currentTeam = activity.getCurrentTeam();
         dictionary = activity.getDictionary();
-        // todo вытаскивать из базы данных
         nextWord();
 
         okButton.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +77,7 @@ public class  GameFragment extends Fragment {
             public void onClick(View v) {
                 currentWord.setGuessed(true);
                 nextWord();
+
             }
         });
         niokButton.setOnClickListener(new View.OnClickListener() {
@@ -112,7 +114,7 @@ public class  GameFragment extends Fragment {
                             scheduleTask();
                             timerProgressView.setProgress(100 / roundTime * (roundTime - timeRemaining));
                             timerTextView.setText(""+timeRemaining);
-                            timerTextView.setVisibility(View.GONE);
+                               timerTextView.setVisibility(View.GONE);
                         }else{
                             gameOver();
                         }
@@ -141,16 +143,17 @@ public class  GameFragment extends Fragment {
         gameOverView.setVisibility(View.VISIBLE);
 
         if (timeRemaining==0) {
-            gameOverView.setText("Время закончилось");
+            gameOverView.setText("Играла команда " + currentTeam.name);
         }else{
-            gameOverView.setText("Закончились слова");
+            gameOverView.setText("Играла команда " + currentTeam.name);
         }
         if (activity.getTeams().size() == activity.getCurrentTeamIndex()+1){
             nextTeamButton.setText("Показать результаты");
+
         }else{
-            nextTeamButton.setText("Ход другой команды");
+            nextTeamButton.setText("Начать раунд");
         }
-        //todo Показать результате, когда заканчиваются слова
+        //todo Показать результаты, когда заканчиваются слова
         nextTeamButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
