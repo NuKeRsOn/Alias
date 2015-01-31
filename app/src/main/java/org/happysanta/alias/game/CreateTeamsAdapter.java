@@ -31,7 +31,6 @@ public class CreateTeamsAdapter extends BaseAdapter {
         this.activity = (Activity) context;
         this.context = context;
         this.teams = new ArrayList<AliasTeam>();
-
         teams.add(new AliasTeam("Львы"));
         teams.add(new AliasTeam("Собаки"));
     }
@@ -94,7 +93,7 @@ public class CreateTeamsAdapter extends BaseAdapter {
                 teamColor.setBackgroundResource(R.drawable.purple_team);
                 break;
         }
-        final AliasTeam team = (AliasTeam) getItem(position);
+        final AliasTeam team = (AliasTeam) getItem  (position);
         editText.setText(team.name);
         editText.addTextChangedListener(new TextWatcher() {
             @Override

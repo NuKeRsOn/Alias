@@ -41,7 +41,7 @@ public class  GameFragment extends Fragment {
     private Handler uiThreadHandler;
     private Timer timer;
     private TimerTask timerTask;
-    private int roundTime = 2;
+    private int roundTime = 30;
     private int timeRemaining = roundTime;
     // game
     private boolean gameOver = false;
@@ -150,16 +150,16 @@ public class  GameFragment extends Fragment {
         gameOverView.setVisibility(View.VISIBLE);
 
         if (timeRemaining==0) {
-            gameOverView.setText("Время закончилось");
+            gameOverView.setText("Играла команда " + currentTeam.name);
         }else{
-            gameOverView.setText("Закончились слова");
+            gameOverView.setText("Играла команда " + currentTeam.name);
         }
         if (activity.getTeams().size() == activity.getCurrentTeamIndex()+1){
             nextTeamButton.setText("Показать результаты");
         }else{
-            nextTeamButton.setText("Ход другой команды");
+            nextTeamButton.setText("Начать раунд");
         }
-        //todo Показать результате, когда заканчиваются слова
+        //todo Показать результаты, когда заканчиваются слова
         nextTeamButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

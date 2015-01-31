@@ -53,7 +53,7 @@ public class GameActivity extends Activity {
         fragment.setArguments(args);
         getFragmentManager().beginTransaction()
                 .replace(R.id.container, fragment)
-                .commit();
+                    .commit();
     }
 
     public void ready() {
@@ -67,7 +67,7 @@ public class GameActivity extends Activity {
 
     public boolean played() {
         currentTeamIndex++;
-        if (currentTeamIndex == teams.size()) {
+        if(currentTeamIndex==teams.size()){
             currentTeamIndex = 0;
             currentTeam = teams.get(0);
             getFragmentManager().beginTransaction()
@@ -87,7 +87,7 @@ public class GameActivity extends Activity {
 
 
     public AliasDictionary getDictionary() {
-        return dictionary;
+       return dictionary;
     }
 
     public ArrayList<AliasTeam> getTeams() {

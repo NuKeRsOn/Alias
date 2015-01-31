@@ -42,12 +42,13 @@
             android:layout_height="wrap_content" />
         </LinearLayout>
     <TextView
-        android:textColor="#e74c3c"
         android:visibility="gone"
         android:id="@+id/game_over"
-        android:text="Игра закончена"
-        android:textSize="20sp"
-        android:layout_centerInParent="true"
+        android:text="Играет"
+        android:textSize="11sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="80dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
@@ -58,12 +59,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <Button
-        android:textColor="#0000ff"
+        android:textColor="#017aff"
         android:background="#ffffff"
+        android:layout_above="@+id/game_over"
         android:id="@+id/next_team"
-        android:visibility="gone"
-        android:layout_marginBottom="50dp"
-        android:layout_alignParentBottom="true"
+        android:visibility="visible"
+        android:text="Начать раунд"
+        android:textSize="16sp"
+        android:drawableRight="@drawable/forward"
+        android:gravity="center"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
