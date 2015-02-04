@@ -22,7 +22,7 @@ public class PrepareFragment extends Fragment {
     private TimerTask timerTask;
     private Timer timer;
     private Handler uiThreadHandler;
-    private int timeRemaining = 1;
+    private int timeRemaining = 5;
     private TextView timeRemainingTextView;
     private TextView teamView;
     private String teamName;
