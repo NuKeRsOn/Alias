@@ -2,6 +2,7 @@ package org.happysanta.alias.game;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 
 import org.happysanta.alias.R;
 import org.happysanta.alias.dictionaries.Dictionaries;
@@ -30,8 +31,8 @@ public class GameActivity extends Activity {
                     .commit();
         }
 
-        // переключатель в настройках
-        if (Locale.getDefault().getISO3Language().equals("ru")) {
+        String langCode = PreferenceManager.getDefaultSharedPreferences(this).getString("pref_lang", "0");
+        if ( langCode.equals("ru") || Locale.getDefault().getISO3Language().equals("ru")) {
             dictionary = Dictionaries.getAll(this, R.raw.words_ru);
         } else {
             dictionary = Dictionaries.getAll(this, R.raw.words_en);

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,7 @@ public class  GameFragment extends Fragment {
     private Timer timer;
     private TimerTask timerTask;
     private int roundTime = 30;
-    private int timeRemaining = roundTime;
+    private int timeRemaining = 0;
     // game
     private boolean gameOver = false;
     AliasTeam currentTeam = new AliasTeam("Одуванчики");
@@ -66,7 +67,8 @@ public class  GameFragment extends Fragment {
         buttonsHolder = gameView.findViewById(R.id.buttons_holder);
         gameOverView = (TextView) gameView.findViewById(R.id.game_over);
 
-        // todo вытаскиваем время раунда из настроек
+        roundTime = Integer.parseInt(PreferenceManager.getDefaultSharedPreferences(getActivity()).getString("pref_lang", "30"));
+        timeRemaining = roundTime;
         if(roundTime==60) {
             timerTextView.setText("1:00");
         } else {

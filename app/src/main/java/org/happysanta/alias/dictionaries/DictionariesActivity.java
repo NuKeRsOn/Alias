@@ -1,7 +1,9 @@
 package org.happysanta.alias.dictionaries;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -56,7 +58,19 @@ public class DictionariesActivity extends ActionBarActivity implements BillingPr
                     case 0:
                         // todo rate the app
                         // buy(DICTIONARY_SEX);
+                        Uri uri = Uri.parse("market://details?id=" + getPackageName());
+                        Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+                        try {
+                            startActivity(goToMarket);
+                            dictionaryActivated(position);
+                        } catch (ActivityNotFoundException e) {
+                            try {
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName())));
+                                dictionaryActivated(position);
+                            } finally {
 
+                            }
+                        }
                         break;
                     case 1:
                         buy(DICTIONARY_GEO);
@@ -73,8 +87,7 @@ public class DictionariesActivity extends ActionBarActivity implements BillingPr
                 }
             }
         });
-        // todo billing key
-        billingProcessor = new BillingProcessor(this, "YOUR LICENSE KEY FROM GOOGLE PLAY CONSOLE HERE", this);
+        billingProcessor = new BillingProcessor(this, "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp898Rf984tibHTq6pbIbpTxlNt1UJPsJEbyQ2DWOQ9Om/zqEN0vVM40SMaHeY3SZM9Y7bHtA1tt+BIyxh1OKyhTKn0+PJvkji1QoaTSRPI6naTPV6Ou+Un24a1F22+Knbi1E/L4yR0OrNhX0mdMPH3KQcPnzdQJ4joEJGnk9VV0U2t1uNQcrLno0BEM4E133HpGjX2YzTSG98KkNenSFcbQR7oQxZSFVaMr/awE9bl6mHg1tfu0mNyxJoKHKGUaRpmuSCKANzNrs0OkzGeYPtqVqj9CYVaHIDjE8yH0WnsCgSs9ajFucZfF3eKN+1hZDdDT1qzN99sky9PSouiVtowIDAQAB", this);
 
     }
     @Override
