@@ -9,7 +9,7 @@
         android:textColor="#007aff"
         android:textSize="15dp"
         android:layout_centerVertical="true"
-        android:text="Добавить команду"
+        android:text="@string/add_team"
         android:layout_marginLeft="52dp"
         android:layout_height="20dp"
         android:layout_width="wrap_content"/>

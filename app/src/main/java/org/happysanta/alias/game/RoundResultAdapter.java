@@ -76,7 +76,7 @@ public class RoundResultAdapter extends BaseAdapter {
         }
 
         scoreView.setText("" + wordsCounter);
-        placeView.setText("Place " + (position + 1));
+        placeView.setText(activity.getResources().getString(R.string.place) + (position + 1));
         nameView.setText(team.name);
 
         return itemView;

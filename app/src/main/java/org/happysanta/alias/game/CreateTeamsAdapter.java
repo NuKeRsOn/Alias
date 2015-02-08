@@ -31,8 +31,8 @@ public class CreateTeamsAdapter extends BaseAdapter {
         this.activity = (Activity) context;
         this.context = context;
         this.teams = new ArrayList<AliasTeam>();
-        teams.add(new AliasTeam("Львы"));
-        teams.add(new AliasTeam("Собаки"));
+        teams.add(new AliasTeam(context.getResources().getString(R.string.lions)));
+        teams.add(new AliasTeam(context.getResources().getString(R.string.dogs)));
     }
 
 

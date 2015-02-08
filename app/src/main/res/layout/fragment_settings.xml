@@ -10,10 +10,9 @@
         android:layout_height="wrap_content">
         <Button
             android:layout_marginLeft="22dp"
-
             android:gravity="center_vertical"
             android:textSize="12sp"
-            android:text="Правила"
+            android:text="@string/rules"
             android:background="#ffffff"
             android:id="@+id/rules"
             android:layout_width="match_parent"
@@ -29,7 +28,7 @@
         <Button
             android:textSize="12sp"
             android:gravity="center_vertical"
-            android:text="О приложении"
+            android:text="@string/about"
             android:layout_marginLeft="22dp"
             android:id="@+id/about"
             android:layout_below="@+id/first_view"

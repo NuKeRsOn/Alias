@@ -42,7 +42,7 @@ public class PrepareFragment extends Fragment {
         Bundle args = getArguments();
         teamName = args.getString("team_name");
 
-        teamView.setText("Играет команда "+ teamName);
+        teamView.setText(getString(R.string.play_team ) + " "+ teamName);
         return rootView;
     }
 
@@ -56,7 +56,7 @@ public class PrepareFragment extends Fragment {
                         timeRemaining--;
                         if(timeRemaining>0) {
                             scheduleTask();
-                            timeRemainingTextView.setText("Осталось " + timeRemaining + " секунд");
+                            timeRemainingTextView.setText(getString(R.string.left ) + " "+ timeRemaining + " "+ getString(R.string.seconds));
                         }else{
                             ready();
                         }

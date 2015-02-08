@@ -17,7 +17,7 @@
     <TextView
         android:textColor="#333"
         android:textSize="15dp"
-        android:text="Осталось 5 секунд"
+        android:text="@string/prepare_time"
         android:layout_centerInParent="true"
         android:id="@+id/time_remaining"
         android:layout_width="wrap_content"

@@ -18,7 +18,7 @@
         android:textColor="#2c3e50"
         android:layout_marginTop="23dp"
         android:layout_centerHorizontal="true"
-        android:text="Результаты"
+        android:text="@string/result"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

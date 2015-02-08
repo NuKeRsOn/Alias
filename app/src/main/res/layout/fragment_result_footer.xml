@@ -10,7 +10,7 @@
         android:layout_marginLeft="22dp"
         android:layout_marginTop="44dp"
         android:textSize="11sp"
-        android:text="Расскажите друзьям о результате"
+        android:text="@string/talk_friends"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -63,7 +63,7 @@
         android:layout_alignParentRight="true"
         android:textColor="#017aff"
         android:background="#00ffffff"
-        android:text="Новая игра"
+        android:text="@string/new_game"
         android:gravity="left"
         android:id="@+id/next_round"
         android:layout_width="match_parent"
@@ -85,7 +85,7 @@
         android:textSize="12sp"
         android:textColor="#017aff"
         android:background="#00ffffff"
-        android:text="Повторить"
+        android:text="@string/replay"
         android:layout_width="match_parent"
         android:layout_height="17dp" />
 
