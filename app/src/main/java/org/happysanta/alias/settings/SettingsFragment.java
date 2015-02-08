@@ -47,14 +47,16 @@ public class SettingsFragment extends PreferenceFragment {
         sharePref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setType("text/plain");
-                intent.putExtra(Intent.EXTRA_SUBJECT, "Play alias too!");
-                intent.putExtra(Intent.EXTRA_TEXT, "Alias for your android!\nhttps://play.google.com/store/apps/details?id="+getActivity().getPackageName());
+                Uri uri = Uri.parse("market://details?id=" + getActivity().getPackageName());
+                Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
                 try {
-                    startActivity(Intent.createChooser(intent, "Share"));
-                }catch (Exception exp){
+                    startActivity(goToMarket);
+                } catch (ActivityNotFoundException e) {
+                    try {
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + getActivity().getPackageName())));
+                    } finally {
 
+                    }
                 }
                 return true;
             }

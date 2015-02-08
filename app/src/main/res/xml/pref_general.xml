@@ -24,10 +24,10 @@
     <PreferenceCategory
         android:title="Application"
         >
-        <Preference
+        <!--<Preference
             android:key="rules"
             android:title="Rules"
-            />
+            />-->
         <Preference
             android:key="share"
             android:title="Share the app"
