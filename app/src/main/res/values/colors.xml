@@ -2,8 +2,9 @@
 <resources>
     <color name="timer_red">#ff0000</color>
     <color name="all_buttons">#ffffff</color>
-    <color name="text_color">#0000ff</color>
+    <color name="text_color">#007aff</color>
     <color name="true_background">#2ecc71</color>
     <color name="window_background">#fff</color>
     <color name="timer">#3498db</color>
+    <color name="divider">#c8c7cc</color>
 </resources>

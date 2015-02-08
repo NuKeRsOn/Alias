@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
     <TextView
         android:layout_centerHorizontal="true"
-        android:text="@string/create_teams"
+        android:text="Создайте команды"
         android:textSize="16sp"
         android:textColor="#444"
         android:layout_marginTop="77dp"
@@ -27,7 +27,7 @@
         android:gravity="center"
         android:background="#00ffffff"
         android:id="@+id/play"
-        android:text="@string/play_game"
+        android:text="Начать игру"
         android:textSize="16sp"
         android:drawableRight="@drawable/forward"
         android:layout_marginBottom="77dp"

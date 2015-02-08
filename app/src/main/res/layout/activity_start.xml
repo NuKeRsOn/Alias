@@ -34,7 +34,7 @@
             android:textSize="15dp"
             android:layout_centerInParent="true"
             android:id="@+id/play"
-            android:text="@string/play_game"
+            android:text="Играть"
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:textColor="#007aff"
@@ -48,7 +48,7 @@
             android:layout_centerInParent="true"
             android:id="@+id/dictionary"
             android:visibility="gone"
-            android:text="@string/dictionary"
+            android:text="Словари"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -60,7 +60,7 @@
             android:layout_centerInParent="true"
             android:id="@+id/settings"
             android:visibility="gone"
-            android:text="@string/action_settings"
+            android:text="Настройки"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

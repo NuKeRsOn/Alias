@@ -9,27 +9,37 @@
         android:textSize="20dp"
         android:layout_marginBottom="50dp"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/timer_progress"
         android:id="@+id/text_team"
         android:text=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-    <ProgressBar
-        android:layout_centerHorizontal="true"
+    <LinearLayout
         android:layout_marginTop="70dp"
-        android:id="@+id/timer_progress"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:indeterminate="false"
-        android:progressDrawable="@drawable/timer"
-        android:background="@drawable/timer_background"
-        android:max="100"
-        android:progress="0"
-        style="?android:attr/progressBarStyleHorizontal" />
-    <TextView
-        android:id="@+id/timer_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/timer_progress"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="2dp"
+            android:layout_marginRight="8dp"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/timer"
+            android:background="@drawable/timer_background"
+            android:max="100"
+            android:progress="0"
+            style="?android:attr/progressBarStyleHorizontal"/>
+        <TextView
+            android:id="@+id/timer_text"
+            android:layout_marginLeft="8dp"
+            android:text="1:00"
+            android:textColor="@color/timer"
+            android:textSize="22sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
     <TextView
         android:visibility="gone"
         android:id="@+id/game_over"

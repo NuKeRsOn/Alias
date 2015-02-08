@@ -43,8 +43,8 @@ public class RoundResultFragment extends Fragment {
         facebookButton = (ImageButton) footerView.findViewById(R.id.facebookButton);
         vkButton = (ImageButton) footerView.findViewById(R.id.vkButton);
 
-        listView.addHeaderView(headerView);
-        listView.addFooterView(footerView);
+        listView.addHeaderView(headerView, null, false);
+        listView.addFooterView(footerView, null, false);
         listView.setAdapter(new RoundResultAdapter(activity, activity.getTeams()));
 
 

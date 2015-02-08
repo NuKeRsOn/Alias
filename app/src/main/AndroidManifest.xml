@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.happysanta.alias" >
-
+    <uses-permission android:name="com.android.vending.BILLING" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -23,13 +23,11 @@
         </activity>
         <activity
             android:name="org.happysanta.alias.settings.SettingsActivity"
-            android:label="@string/title_activity_settings"
-            android:theme="@style/AppTheme">
+            android:label="@string/title_activity_settings">
         </activity>
         <activity
             android:name="org.happysanta.alias.dictionaries.DictionariesActivity"
-            android:label="@string/title_activity_dictionaries"
-            android:theme="@style/AppTheme" >
+            android:label="@string/dictionaries_activity_title" >
         </activity>
     </application>
 

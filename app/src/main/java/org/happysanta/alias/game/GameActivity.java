@@ -1,22 +1,15 @@
 package org.happysanta.alias.game;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.res.AssetManager;
 import android.os.Bundle;
-import android.os.Message;
-import android.provider.UserDictionary;
+import android.preference.PreferenceManager;
 
 import org.happysanta.alias.R;
 import org.happysanta.alias.dictionaries.Dictionaries;
 import org.happysanta.alias.models.AliasDictionary;
 import org.happysanta.alias.models.AliasTeam;
-import org.happysanta.alias.models.AliasWord;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 
 
@@ -37,10 +30,12 @@ public class GameActivity extends Activity {
                     .add(R.id.container, new CreateTeamsFragment())
                     .commit();
         }
-        if (Locale.getDefault().getISO3Language().equals("eng") ){
-            dictionary = Dictionaries.getAll(this, R.raw.words_en);
-        }else{
+
+        String langCode = PreferenceManager.getDefaultSharedPreferences(this).getString("pref_lang", "0");
+        if ( langCode.equals("ru") || Locale.getDefault().getISO3Language().equals("ru")) {
             dictionary = Dictionaries.getAll(this, R.raw.words_ru);
+        } else {
+            dictionary = Dictionaries.getAll(this, R.raw.words_en);
         }
     }
 
@@ -64,6 +59,7 @@ public class GameActivity extends Activity {
 
     public void ready() {
         // какая команда играет, какой раунд
+        //todo Слова при новой загрузке
         getFragmentManager().beginTransaction()
                 .replace(R.id.container, new GameFragment())
                 .commit();
@@ -89,6 +85,7 @@ public class GameActivity extends Activity {
     public void roundResultViewed() {
         finish();
     }
+
 
     public AliasDictionary getDictionary() {
        return dictionary;

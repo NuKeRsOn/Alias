@@ -143,15 +143,15 @@ public class  GameFragment extends Fragment {
         gameOverView.setVisibility(View.VISIBLE);
 
         if (timeRemaining==0) {
-            gameOverView.setText(getText(R.string.teams_played)  + " " + currentTeam.name);
+            gameOverView.setText("Играла команда " + currentTeam.name);
         }else{
-            gameOverView.setText(getText(R.string.teams_played ) + " " + currentTeam.name);
+            gameOverView.setText("Играла команда " + currentTeam.name);
         }
         if (activity.getTeams().size() == activity.getCurrentTeamIndex()+1){
-            nextTeamButton.setText(R.string.show_result);
+            nextTeamButton.setText("Показать результаты");
 
         }else{
-            nextTeamButton.setText(R.string.play_round);
+            nextTeamButton.setText("Начать раунд");
         }
         //todo Показать результаты, когда заканчиваются слова
         nextTeamButton.setOnClickListener(new View.OnClickListener() {
