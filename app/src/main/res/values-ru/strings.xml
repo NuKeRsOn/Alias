@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="action_settings">Настройки</string>
+    <string name="settings">Настройки</string>
     <string name="game_over">Игра закончена</string>
     <string name="teams_empty">Не создано команд!</string>
     <string name="add_team">Добавить команду</string>
     <string name="play_game">Начать игру</string>
     <string name="team_name">Название команды</string>
     <string name="play">Играть</string>
-    <string name="dictionary">Словари</string>
+    <string name="dictionaries">Словари</string>
     <string name="lions">Львы</string>
     <string name="dogs">Собаки</string>
-    <string name="play_team">Играет команда</string>
-    <string name="seconds">секунд</string>
-    <string name="left">Осталось</string>
-    <string name="teams_played">Играла команда</string>
+    <string name="teams_turn">Играет команда %s</string>
+    <string name="seconds">%d секунд</string>
+    <string name="start_in">Игра начнётся через %d</string>
+    <string name="teams_played">Играет команда %s</string>
     <string name="show_result">Показать Результаты</string>
     <string name="play_round">Начать раунд</string>
     <string name="place">Место</string>
@@ -22,8 +22,19 @@
     <string name="replay">Повторить</string>
     <string name="rules">Правила</string>
     <string name="about">О приложении</string>
-    <string name="talk_friends">Расскажи друзьям о результате</string>
+    <string name="talk_friends">Расскажи друзьям об игре</string>
     <string name="create_teams">Создайте команды</string>
     <string name="prepare_time">Осталось 5 секунд</string>
+    <string name="supported">При поддержке</string>
+    <string name="app_name">Alias</string>
+    <string name="dictionary_added">добавлен</string>
+    <string name="dictionary_all">Все словари</string>
+    <string name="dictionary_basic_1">Базовый 1</string>
+    <string name="dictionary_basic_2">Базовый 2</string>
+    <string name="dictionary_count">%d слов</string>
+    <string name="dictionary_geo">Города и страны</string>
+    <string name="dictionary_rate">Поставьте 5 звезд :)</string>
+    <string name="dictionary_sex">Секс и отношения</string>
+    <string name="title_activity_settings">Настройки</string>
 
 </resources>

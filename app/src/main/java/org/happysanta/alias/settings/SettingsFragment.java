@@ -27,10 +27,17 @@ public class SettingsFragment extends PreferenceFragment {
         aboutPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-
+                View aboutView = View.inflate(getActivity(), R.layout.about, null);
+                View santa = aboutView.findViewById(R.id.santa);
+                santa.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://vk.com/happysanta")));
+                    }
+                });
                 new AlertDialog.Builder(getActivity())
                         .setTitle("О приложении")
-                        .setView(View.inflate(getActivity(), R.layout.about, null))
+                        .setView(aboutView)
                         .setPositiveButton("Ясно", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -47,17 +54,20 @@ public class SettingsFragment extends PreferenceFragment {
         sharePref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-                Uri uri = Uri.parse("market://details?id=" + getActivity().getPackageName());
-                Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
-                try {
-                    startActivity(goToMarket);
-                } catch (ActivityNotFoundException e) {
-                    try {
-                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + getActivity().getPackageName())));
-                    } finally {
 
-                    }
+                try {
+
+                    Intent shareIntent = new Intent();
+                    shareIntent.setAction(Intent.ACTION_SEND);
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, ("http://play.google.com/store/apps/details?id=" + getActivity().getPackageName()));
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Поиграйте в Alias на андроид");
+                    shareIntent.setType("text/plain");
+                    startActivity(Intent.createChooser(shareIntent, "Поделиться"));
+
+                } catch (Exception exp){
+
                 }
+
                 return true;
             }
         });
@@ -72,7 +82,6 @@ public class SettingsFragment extends PreferenceFragment {
                 try {
                     startActivity(goToMarket);
                 } catch (ActivityNotFoundException e) {
-                    //UtilityClass.showAlertDialog(context, ERROR, "Couldn't launch the market", null, 0);
                 }
                 return true;
             }

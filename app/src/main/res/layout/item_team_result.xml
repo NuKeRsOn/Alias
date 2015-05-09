@@ -4,10 +4,14 @@
     android:background="#ffffff"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <View
-        android:id="@+id/team_color"
+    <TextView
+        android:id="@+id/score"
         android:layout_marginLeft="15dp"
         android:background="@drawable/red_team"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:text="20"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginRight="15dp"/>
@@ -16,7 +20,7 @@
         android:textColor="#34495e"
         android:text="Team name"
         android:textSize="15dp"
-        android:layout_toRightOf="@+id/team_color"
+        android:layout_toRightOf="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
@@ -25,7 +29,7 @@
         android:text="place: 1"
         android:textSize="9dp"
         android:textColor="#afb7bf"
-        android:layout_toRightOf="@+id/team_color"
+        android:layout_toRightOf="@+id/score"
         android:layout_below="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -36,12 +40,4 @@
         android:layout_below="@+id/place"
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
-    <TextView
-        android:id="@+id/score"
-        android:layout_marginTop="17dp"
-        android:layout_marginRight="10dp"
-        android:text="320"
-        android:layout_alignParentRight="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 </RelativeLayout>

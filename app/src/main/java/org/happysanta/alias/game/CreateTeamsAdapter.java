@@ -78,7 +78,7 @@ public class CreateTeamsAdapter extends BaseAdapter {
         }
         View editTextHolder = LayoutInflater.from(context).inflate(R.layout.item_team_add, null);
         EditText editText = (EditText) editTextHolder.findViewById(R.id.text);
-        View teamColor = editTextHolder.findViewById(R.id.team_color);
+        View teamColor = editTextHolder.findViewById(R.id.score);
         switch (position){
             case 1:
                 teamColor.setBackgroundResource(R.drawable.yellow_team);

@@ -13,7 +13,7 @@
             android:positiveButtonText="@null" />
 
         <ListPreference
-            android:key="sync_frequency"
+            android:key="pref_time"
             android:title="@string/pref_round_time"
             android:entries="@array/pref_round_time_titles"
             android:entryValues="@array/pref_round_time_values"

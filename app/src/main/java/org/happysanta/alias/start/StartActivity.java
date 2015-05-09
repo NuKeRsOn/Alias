@@ -41,7 +41,7 @@ public class StartActivity extends FragmentActivity {
 
         pref = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
-        if (pref.getBoolean("first_start", true)) {
+        if (pref.getBoolean("first_start", false)) {
             showStart();
         } else {
             showMenu();

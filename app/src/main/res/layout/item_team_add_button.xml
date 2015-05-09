@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp" />
     <ImageView
-        android:id="@+id/team_color"
+        android:id="@+id/score"
         android:layout_marginLeft="15dp"
         android:background="@drawable/plus"
         android:layout_centerVertical="true"

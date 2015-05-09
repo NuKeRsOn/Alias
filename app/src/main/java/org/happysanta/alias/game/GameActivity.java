@@ -31,11 +31,11 @@ public class GameActivity extends Activity {
                     .commit();
         }
 
-        String langCode = PreferenceManager.getDefaultSharedPreferences(this).getString("pref_lang", "0");
-        if ( langCode.equals("ru") || Locale.getDefault().getISO3Language().equals("ru")) {
-            dictionary = Dictionaries.getAll(this, R.raw.words_ru);
+        String langCode = PreferenceManager.getDefaultSharedPreferences(this).getString("pref_lang", "en");
+        if (langCode.equals("ru") || Locale.getDefault().getISO3Language().equals("ru")) {
+            dictionary = Dictionaries.getAll(this, R.raw.default_ru);
         } else {
-            dictionary = Dictionaries.getAll(this, R.raw.words_en);
+            dictionary = Dictionaries.getAll(this, R.raw.default_en);
         }
     }
 
@@ -54,7 +54,7 @@ public class GameActivity extends Activity {
         fragment.setArguments(args);
         getFragmentManager().beginTransaction()
                 .replace(R.id.container, fragment)
-                    .commit();
+                .commit();
     }
 
     public void ready() {
@@ -68,7 +68,7 @@ public class GameActivity extends Activity {
 
     public boolean played() {
         currentTeamIndex++;
-        if(currentTeamIndex==teams.size()){
+        if (currentTeamIndex == teams.size()) {
             currentTeamIndex = 0;
             currentTeam = teams.get(0);
             getFragmentManager().beginTransaction()
@@ -88,7 +88,7 @@ public class GameActivity extends Activity {
 
 
     public AliasDictionary getDictionary() {
-       return dictionary;
+        return dictionary;
     }
 
     public ArrayList<AliasTeam> getTeams() {
@@ -101,5 +101,9 @@ public class GameActivity extends Activity {
 
     public int getCurrentTeamIndex() {
         return currentTeamIndex;
+    }
+
+    public AliasTeam getNextTeam() {
+        return teams.get(currentTeamIndex + 1);
     }
 }

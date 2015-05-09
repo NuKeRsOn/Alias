@@ -56,21 +56,19 @@ public class DictionariesActivity extends ActionBarActivity implements BillingPr
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position){
                     case 0:
-                        // todo rate the app
-                        // buy(DICTIONARY_SEX);
                         Uri uri = Uri.parse("market://details?id=" + getPackageName());
                         Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
                         try {
                             startActivity(goToMarket);
-                            dictionaryActivated(position);
                         } catch (ActivityNotFoundException e) {
                             try {
                                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName())));
-                                dictionaryActivated(position);
                             } finally {
 
                             }
                         }
+                        prefs.edit().putBoolean(DICTIONARY_SEX, true).apply();
+                        adapter.notifyDataSetChanged();
                         break;
                     case 1:
                         buy(DICTIONARY_GEO);

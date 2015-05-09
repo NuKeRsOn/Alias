@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.happysanta.alias.R;
 
@@ -37,12 +36,13 @@ public class PrepareFragment extends Fragment {
         uiThreadHandler = new Handler();
 
         timer = new Timer();
+        timeRemainingTextView.setText(getString(R.string.start_in, timeRemaining));
         scheduleTask();
 
         Bundle args = getArguments();
         teamName = args.getString("team_name");
 
-        teamView.setText(getString(R.string.play_team ) + " "+ teamName);
+        teamView.setText(getString(R.string.teams_turn, teamName));
         return rootView;
     }
 
@@ -56,7 +56,7 @@ public class PrepareFragment extends Fragment {
                         timeRemaining--;
                         if(timeRemaining>0) {
                             scheduleTask();
-                            timeRemainingTextView.setText(getString(R.string.left ) + " "+ timeRemaining + " "+ getString(R.string.seconds));
+                            timeRemainingTextView.setText(getString(R.string.start_in, timeRemaining));
                         }else{
                             ready();
                         }

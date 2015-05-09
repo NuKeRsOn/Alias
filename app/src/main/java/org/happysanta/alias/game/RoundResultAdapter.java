@@ -46,7 +46,7 @@ public class RoundResultAdapter extends BaseAdapter {
 
         View itemView = activity.getLayoutInflater().inflate(R.layout.item_team_result, null);
 
-        View teamColor = itemView.findViewById(R.id.team_color);
+        //View teamColor = itemView.findViewById(R.id.team_color);
 
         TextView scoreView = (TextView) itemView.findViewById(R.id.score);
         TextView placeView = (TextView) itemView.findViewById(R.id.place);
@@ -55,16 +55,16 @@ public class RoundResultAdapter extends BaseAdapter {
         AliasTeam team = (AliasTeam) getItem(position);
         switch (position){
             case 1:
-                teamColor.setBackgroundResource(R.drawable.yellow_team);
+                scoreView.setBackgroundResource(R.drawable.yellow_team);
                 break;
             case 2:
-                teamColor.setBackgroundResource(R.drawable.green_team);
+                scoreView.setBackgroundResource(R.drawable.green_team);
                 break;
             case 3:
-                teamColor.setBackgroundResource(R.drawable.blue_team);
+                scoreView.setBackgroundResource(R.drawable.blue_team);
                 break;
             case 4:
-                teamColor.setBackgroundResource(R.drawable.purple_team);
+                scoreView.setBackgroundResource(R.drawable.purple_team);
                 break;
         }
 
@@ -76,7 +76,11 @@ public class RoundResultAdapter extends BaseAdapter {
         }
 
         scoreView.setText("" + wordsCounter);
-        placeView.setText(activity.getResources().getString(R.string.place) + (position + 1));
+        if(position==0){
+            placeView.setText(activity.getResources().getString(R.string.place_winner));
+        } else {
+            placeView.setText(activity.getResources().getString(R.string.place, position + 1));
+        }
         nameView.setText(team.name);
 
         return itemView;

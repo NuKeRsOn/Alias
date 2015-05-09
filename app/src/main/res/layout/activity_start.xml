@@ -6,13 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".StartActivity">
 
-    <ImageView
-        android:src="@drawable/alias"
-        android:id="@+id/splash_text"
-        android:textColor="#0000ff"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
     <RelativeLayout
         android:layout_centerInParent="true"
         android:id="@+id/menu_holder"
@@ -25,74 +18,50 @@
             android:layout_centerHorizontal="true"
             android:visibility="gone"
             android:id="@+id/menu_header"
-            android:textColor="#0000ff"
             android:layout_width="wrap_content"
-            android:layout_height="35dp" />
+            android:layout_height="56dp" />
 
         <Button
-            android:background="#ffffff"
             android:textSize="15dp"
             android:layout_centerInParent="true"
             android:id="@+id/play"
-            android:text="Играть"
+            android:text="@string/play"
+            android:textColor="@color/text_color"
             android:visibility="gone"
-            android:layout_width="wrap_content"
-            android:textColor="#007aff"
-            android:layout_height="wrap_content" />
+            android:background="#00000000"
+            android:layout_width="150dp"
+            android:layout_height="50dp"/>
 
         <Button
-            android:background="#ffffff"
             android:textColor="#007aff"
             android:textSize="15dp"
             android:layout_below="@+id/play"
             android:layout_centerInParent="true"
             android:id="@+id/dictionary"
+            android:text="@string/dictionaries"
             android:visibility="gone"
-            android:text="Словари"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:background="#00000000"
+            android:layout_width="150dp"
+            android:layout_height="50dp" />
 
         <Button
-            android:background="#ffffff"
-            android:textColor="#007aff"
+            android:textColor="@color/text_color"
             android:textSize="15dp"
             android:layout_below="@+id/dictionary"
             android:layout_centerInParent="true"
             android:id="@+id/settings"
+            android:text="@string/settings"
             android:visibility="gone"
-            android:text="Настройки"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:background="#00000000"
+            android:layout_width="150dp"
+            android:layout_height="50dp" />
 
 
     </RelativeLayout>
 
-    <ImageView
-        android:visibility="gone"
-        android:id="@+id/rules_image"
-        android:layout_above="@+id/rules_text"
-        android:src="@drawable/pic3"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
-    <TextView
-        android:textSize="36dp"
-        android:gravity="center"
-        android:visibility="gone"
-        android:id="@+id/rules_text"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="10dp"
-        android:layout_above="@+id/agree"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:background="#ffffff"
-        android:textSize="15dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:id="@+id/agree"
-        android:textColor="#0000ff"
-        android:text="Ok"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"/>
+        android:layout_height="match_parent"
+        />
 </RelativeLayout>

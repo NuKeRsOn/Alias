@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/word"
+        android:text="Слово"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="33dp" />
+    <ImageView
+        android:id="@+id/image"
+        android:src="@drawable/v_white"
+        android:scaleType="centerInside"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/word_guessed_background"
+        android:layout_width="40dp"
+        android:layout_height="25dp" />
+</RelativeLayout>

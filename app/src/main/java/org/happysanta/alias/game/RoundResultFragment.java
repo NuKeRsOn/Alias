@@ -70,7 +70,7 @@ public class RoundResultFragment extends Fragment {
                     Intent intent = new Intent(Intent.ACTION_SEND);
                     intent.setClassName("com.twitter.android", "com.twitter.android.composer.ComposerActivity");
                     intent.setType("text/plain");
-                    intent.putExtra(Intent.EXTRA_TEXT, "Alias for android!\ngoogle.com");
+                    intent.putExtra(Intent.EXTRA_TEXT, "Alias for android!\n"+ "http://play.google.com/store/apps/details?id=" + getActivity().getPackageName());
                     startActivity(intent);
                 }catch (Exception exp){
                     String url = "http://www.twitter.com/intent/tweet?url=google.com&text=Alias for android!";
