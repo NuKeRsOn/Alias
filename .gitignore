@@ -73,7 +73,8 @@ $RECYCLE.BIN/
 *.lnk
 
 .idea
-/.idea
-.idea/
-/.idea/
 *.iml
+gradlew
+gradlew.bat
+gradle.properties
+gradle
