@@ -165,7 +165,7 @@ public class  GameFragment extends Fragment {
             roundOverView.setVisibility(View.GONE);
         }else{
             nextTeamButton.setText(R.string.play_round);
-            roundOverView.setText(getString(R.string.teams_turn, activity.getNextTeam().name));
+//            roundOverView.setText(getString(R.string.teams_turn, activity.getNextTeam().name));
         }
         nextTeamButton.setOnClickListener(new View.OnClickListener() {
             @Override

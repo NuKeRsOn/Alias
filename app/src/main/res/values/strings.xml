@@ -3,7 +3,7 @@
 
     <string name="app_name">Alias</string>
     <string name="hello_world" translatable="false">Hello world!</string>
-    <string name="settings">Settings</string>
+    <string name="settings">Dictionaries</string>
     <string name="title_activity_game" translatable="false">GameActivity</string>
     <string name="game_over">Game over</string>
     <string name="teams_empty">There are no teams!</string>

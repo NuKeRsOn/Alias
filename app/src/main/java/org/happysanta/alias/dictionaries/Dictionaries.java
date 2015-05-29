@@ -2,7 +2,6 @@ package org.happysanta.alias.dictionaries;
 
 import android.content.Context;
 
-import org.happysanta.alias.R;
 import org.happysanta.alias.models.AliasDictionary;
 import org.happysanta.alias.models.AliasWord;
 
@@ -16,15 +15,19 @@ import java.util.ArrayList;
  */
 public class Dictionaries {
     public static AliasDictionary getAll(Context context, int rawId) {
+
         InputStream inputStream = context.getResources().openRawResource(rawId);
+
         String dictionaryString = getStringFromStream(inputStream);
         String[] dictionaryArray = dictionaryString.split("\n");
+
         ArrayList<AliasWord> words = new ArrayList<>();
+
         for (String dictionaryWord : dictionaryArray){
             words.add(new AliasWord(dictionaryWord));
         }
-        AliasDictionary aliasDictionary = new AliasDictionary(words);
-        return aliasDictionary;
+
+        return new AliasDictionary(words);
     }
     private static String getStringFromStream(InputStream inputStream){
         System.out.println(inputStream);

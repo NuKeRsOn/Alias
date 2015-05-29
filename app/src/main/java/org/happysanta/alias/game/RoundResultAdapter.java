@@ -48,7 +48,7 @@ public class RoundResultAdapter extends BaseAdapter {
 
         //View teamColor = itemView.findViewById(R.id.team_color);
 
-        TextView scoreView = (TextView) itemView.findViewById(R.id.score);
+        TextView scoreView = (TextView) itemView.findViewById(R.id.add_icon);
         TextView placeView = (TextView) itemView.findViewById(R.id.place);
         TextView nameView = (TextView) itemView.findViewById(R.id.name);
 
@@ -81,7 +81,7 @@ public class RoundResultAdapter extends BaseAdapter {
         } else {
             placeView.setText(activity.getResources().getString(R.string.place, position + 1));
         }
-        nameView.setText(team.name);
+//        nameView.setText(team.name);
 
         return itemView;
     }

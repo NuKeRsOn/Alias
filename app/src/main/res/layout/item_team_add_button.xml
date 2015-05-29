@@ -1,30 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <RelativeLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <Button
-        android:id="@+id/button"
-        android:background="#00ffffff"
-        android:textColor="#007aff"
-        android:textSize="15dp"
-        android:layout_centerVertical="true"
-        android:text="@string/add_team"
-        android:layout_marginLeft="52dp"
-        android:layout_height="20dp"
-        android:layout_width="wrap_content"/>
-    <View
-        android:layout_below="@+id/button"
-            android:background="#dbdbdb"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="53dp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp" />
+    android:layout_height="?listPreferredItemHeightSmall"
+    android:background="?attr/selectableItemBackground"
+    android:paddingRight="8dp"
+    android:paddingLeft="8dp">
+
     <ImageView
-        android:id="@+id/score"
-        android:layout_marginLeft="15dp"
-        android:background="@drawable/plus"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_centerVertical="true"
-        android:layout_width="23dp"
-        android:layout_height="23dp" />
-    </RelativeLayout>
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:id="@+id/add_icon"
+        android:scaleType="centerInside"
+        android:src="@drawable/plus"
+        tools:ignore="ContentDescription"/>
+
+    <TextView
+        android:id="@+id/add_text"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/add_icon"
+        android:layout_toEndOf="@id/add_icon"
+        android:textColor="@color/color_primary"
+        android:textSize="14sp"
+        android:text="@string/add_team"/>
+
+    <View
+        android:layout_below="@+id/add_text"
+        android:background="#dbdbdb"
+        android:layout_width="match_parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_height="1dp" />
+
+</RelativeLayout>

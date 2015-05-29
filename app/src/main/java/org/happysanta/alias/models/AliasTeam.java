@@ -7,11 +7,19 @@ import java.util.ArrayList;
  */
 public class AliasTeam {
 
-    public String name;
-    public ArrayList<AliasWord> words= new ArrayList<AliasWord>();
+    private String name;
+    public ArrayList<AliasWord> words= new ArrayList<>();
 
     public AliasTeam(String name){
         this.name = name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void addWord(AliasWord word) {

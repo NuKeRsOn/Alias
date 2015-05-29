@@ -6,11 +6,11 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.android.vending.BILLING" />
     <application
+        android:name=".AliasApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:name=".AliasApplication"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme.NoActionBar" >
+        android:theme="@style/AppTheme" >
         <activity
             android:name="org.happysanta.alias.start.StartActivity"
             android:label="@string/app_name" >

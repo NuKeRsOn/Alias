@@ -25,11 +25,11 @@ public class GameActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction()
-                    .add(R.id.container, new CreateTeamsFragment())
-                    .commit();
-        }
+//        if (savedInstanceState == null) {
+//            getFragmentManager().beginTransaction()
+//                    .add(R.id.container, new CreateTeamsFragment())
+//                    .commit();
+//        }
 
         String langCode = PreferenceManager.getDefaultSharedPreferences(this).getString("pref_lang", "en");
         if (langCode.equals("ru") || Locale.getDefault().getISO3Language().equals("ru")) {
@@ -50,7 +50,7 @@ public class GameActivity extends Activity {
     public void playRound() {
         PrepareFragment fragment = new PrepareFragment();
         Bundle args = new Bundle();
-        args.putString("team_name", currentTeam.name);
+//        args.putString("team_name", currentTeam.name);
         fragment.setArguments(args);
         getFragmentManager().beginTransaction()
                 .replace(R.id.container, fragment)

@@ -85,7 +85,20 @@ public class DictionariesActivity extends ActionBarActivity implements BillingPr
                 }
             }
         });
-        billingProcessor = new BillingProcessor(this, "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp898Rf984tibHTq6pbIbpTxlNt1UJPsJEbyQ2DWOQ9Om/zqEN0vVM40SMaHeY3SZM9Y7bHtA1tt+BIyxh1OKyhTKn0+PJvkji1QoaTSRPI6naTPV6Ou+Un24a1F22+Knbi1E/L4yR0OrNhX0mdMPH3KQcPnzdQJ4joEJGnk9VV0U2t1uNQcrLno0BEM4E133HpGjX2YzTSG98KkNenSFcbQR7oQxZSFVaMr/awE9bl6mHg1tfu0mNyxJoKHKGUaRpmuSCKANzNrs0OkzGeYPtqVqj9CYVaHIDjE8yH0WnsCgSs9ajFucZfF3eKN+1hZDdDT1qzN99sky9PSouiVtowIDAQAB", this);
+        billingProcessor = new BillingProcessor(
+                this,
+                "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMII" +
+                        "BCgKCAQEAp898Rf984tibHTq6pbIbpTxlNt1" +
+                        "UJPsJEbyQ2DWOQ9Om/zqEN0vVM40SMaHeY3S" +
+                        "ZM9Y7bHtA1tt+BIyxh1OKyhTKn0+PJvkji1Q" +
+                        "oaTSRPI6naTPV6Ou+Un24a1F22+Knbi1E/L4" +
+                        "yR0OrNhX0mdMPH3KQcPnzdQJ4joEJGnk9VV0" +
+                        "U2t1uNQcrLno0BEM4E133HpGjX2YzTSG98Kk" +
+                        "NenSFcbQR7oQxZSFVaMr/awE9bl6mHg1tfu0" +
+                        "mNyxJoKHKGUaRpmuSCKANzNrs0OkzGeYPtqV" +
+                        "qj9CYVaHIDjE8yH0WnsCgSs9ajFucZfF3eKN" +
+                        "+1hZDdDT1qzN99sky9PSouiVtowIDAQAB",
+                this);
 
     }
     @Override

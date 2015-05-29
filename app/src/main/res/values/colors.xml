@@ -4,7 +4,17 @@
     <color name="all_buttons">#ffffff</color>
     <color name="text_color">#007aff</color>
     <color name="true_background">#2ecc71</color>
-    <color name="window_background">#fff</color>
     <color name="timer">#3498db</color>
     <color name="divider">#c8c7cc</color>
+
+    <color name="color_primary">#007aff</color>
+    <!--<item name="color_primary_dark" type="color">#2c94bc</item>-->
+    <color name="color_window_background">#fff</color>
+    <color name="color_accent">#34aedd</color>
+    <color name="color_accent_dark">#2c94bc</color>
+    <color name="color_activated_highlight">#c4d5db</color>
+    <color name="color_white">#fff</color>
+    <color name="color_settings_title">#9ca4a7</color>
+    <color name="color_main_element">#093e59</color>
+
 </resources>
