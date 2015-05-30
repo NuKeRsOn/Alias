@@ -1,15 +1,14 @@
 package org.happysanta.alias.settings;
 
 
-import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.view.View;
+import android.widget.ListView;
 
 import org.happysanta.alias.R;
 
@@ -21,9 +20,21 @@ public class SettingsFragment extends PreferenceFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        ListView listView = (ListView) view.findViewById(android.R.id.list);
+
+        View aboutView = View.inflate(getActivity(), R.layout.about, null);
+        View santa = aboutView.findViewById(R.id.santa);
+        santa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://vk.com/happysanta")));
+            }
+        });
+        listView.addFooterView(aboutView, null, false);
+
         addPreferencesFromResource(R.xml.pref_general);
 
-        Preference aboutPreference = findPreference("about");
+        /*Preference aboutPreference = findPreference("about");
         aboutPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
@@ -46,10 +57,9 @@ public class SettingsFragment extends PreferenceFragment {
                         })
                         .setCancelable(true)
                         .show().setCanceledOnTouchOutside(true);
-
                 return true;
             }
-        });
+        });*/
         Preference sharePref = findPreference("share");
         sharePref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
@@ -59,8 +69,8 @@ public class SettingsFragment extends PreferenceFragment {
 
                     Intent shareIntent = new Intent();
                     shareIntent.setAction(Intent.ACTION_SEND);
-                    shareIntent.putExtra(Intent.EXTRA_TEXT, ("http://play.google.com/store/apps/details?id=" + getActivity().getPackageName()));
-                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Поиграйте в Alias на андроид");
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, ("http://jesuscodes.me/alias/"));
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Alias для твоего смартфона!");
                     shareIntent.setType("text/plain");
                     startActivity(Intent.createChooser(shareIntent, "Поделиться"));
 

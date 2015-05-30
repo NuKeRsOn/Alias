@@ -36,10 +36,6 @@
             android:key="rate"
             android:title="Rate the app"
             />
-        <Preference
-            android:key="about"
-            android:title="About app"
-            />
     </PreferenceCategory>
 
 </PreferenceScreen>

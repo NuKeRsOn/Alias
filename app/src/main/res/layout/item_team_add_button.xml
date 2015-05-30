@@ -28,7 +28,7 @@
         android:layout_centerVertical="true"
         android:layout_toRightOf="@id/add_icon"
         android:layout_toEndOf="@id/add_icon"
-        android:textColor="@color/color_primary"
+        android:textColor="@color/primary"
         android:textSize="14sp"
         android:text="@string/add_team"/>
 

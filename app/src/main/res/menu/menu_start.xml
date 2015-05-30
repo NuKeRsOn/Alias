@@ -3,15 +3,15 @@
       xmlns:app="http://schemas.android.com/apk/res-auto"
       tools:context=".StartActivity">
 
-    <item
+    <!--<item
         android:id="@+id/action_dictionaries"
         android:title="@string/dictionaries"
         android:orderInCategory="100"
-        app:showAsAction="never" />
-
+        app:showAsAction="never" />-->
     <item
-        android:id="@+id/action_about"
-        android:title="@string/about"
+        android:id="@+id/action_settings"
+        android:title="@string/settings"
         android:orderInCategory="200"
-        app:showAsAction="never" />
+        android:icon="@drawable/ic_setting_light"
+        app:showAsAction="always" />
 </menu>

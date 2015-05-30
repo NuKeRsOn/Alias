@@ -1,14 +1,19 @@
 package org.happysanta.alias.game;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
 import org.happysanta.alias.R;
+import org.happysanta.alias.dictionaries.DictionariesActivity;
 import org.happysanta.alias.game.adapter.TeamsAdapter;
 import org.happysanta.alias.util.base.BaseFragment;
 
@@ -24,6 +29,7 @@ public class CreateTeamsFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
         return inflater.inflate(R.layout.fragment_create_teams, container, false);
     }
 
@@ -46,4 +52,21 @@ public class CreateTeamsFragment extends BaseFragment {
         mTeamList.setAdapter(mTeamsAdapter);
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_start, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId()== R.id.action_dictionaries) {
+            startActivity(new Intent(getActivity(), DictionariesActivity.class));
+            return true;
+        }
+        if (item.getItemId()== R.id.action_settings) {
+            startActivity(new Intent(getActivity(), DictionariesActivity.class));//SettingsActivity.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

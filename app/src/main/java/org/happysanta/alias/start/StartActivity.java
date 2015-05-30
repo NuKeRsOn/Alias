@@ -21,12 +21,5 @@ public class StartActivity extends BaseActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new CreateTeamsFragment()).commit();
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.menu_start, menu);
-        return true;
-    }
 }
 

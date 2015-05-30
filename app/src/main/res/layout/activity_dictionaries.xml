@@ -2,9 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_window_background"
     tools:context="org.happysanta.alias.dictionaries.DictionariesActivity">
     <ListView
-        android:id="@+id/dictionaries"
+        android:id="@+id/list"
         android:layout_below="@+id/toolbar"
         android:divider="@drawable/dictionary_divider"
         android:dividerHeight="1px"

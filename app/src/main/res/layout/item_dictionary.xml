@@ -4,24 +4,29 @@
     android:padding="12dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/title"
-        android:text="Название словаря"
-        android:textSize="18sp"
-        android:textColor="#000"
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
         android:layout_toLeftOf="@+id/cost"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/count"
-        android:text="100 слов"
-        android:textColor="#4d4d4d"
-        android:textSize="14sp"
-        android:layout_marginTop="2dp"
-        android:layout_below="@+id/title"
-        android:layout_toLeftOf="@+id/cost"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="40dp">
+        <TextView
+            android:id="@+id/title"
+            android:text="Название словаря"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/count"
+
+            android:text="100 слов"
+            android:textColor="#4d4d4d"
+            android:textSize="14sp"
+            android:layout_marginTop="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
     <TextView
         android:id="@+id/cost"
         android:text="$1.00"
