@@ -24,7 +24,7 @@
     <string name="about">О приложении</string>
     <string name="talk_friends">Расскажи друзьям об игре</string>
     <string name="create_teams">Создайте команды</string>
-    <string name="prepare_time">Осталось 5 секунд</string>
+    <string name="prepare_time">Осталось %d секунд</string>
     <string name="supported">При поддержке</string>
     <string name="app_name">Alias</string>
     <string name="dictionary_added">добавлен</string>
@@ -36,5 +36,10 @@
     <string name="dictionary_rate">Поставьте 5 звезд :)</string>
     <string name="dictionary_sex">Секс и отношения</string>
     <string name="title_activity_settings">Настройки</string>
+    <string name="free">Бесплатно</string>
+    <string name="place_winner">Победители</string>
+    <string name="share">Рассказать о приложении</string>
+    <string name="share_subject">Alias на телефон!</string>
+    <string name="tour_gotit">Понял</string>
 
 </resources>

@@ -44,6 +44,8 @@
     <string name="share_subject">Alias for your phone!</string>
     <string name="share">Share</string>
     <string name="free">Free</string>
+    <string name="teams_played">%s team plays</string>
+    <string name="title_activity_settings">Settings</string>
 
 
 </resources>
