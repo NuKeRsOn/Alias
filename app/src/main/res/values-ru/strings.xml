@@ -28,7 +28,7 @@
     <string name="supported">При поддержке</string>
     <string name="app_name">Alias</string>
     <string name="dictionary_added">добавлен</string>
-    <string name="dictionary_all">Все словари</string>
+    <string name="dictionary_full">Все словари</string>
     <string name="dictionary_basic_1">Базовый 1</string>
     <string name="dictionary_basic_2">Базовый 2</string>
     <string name="dictionary_count">%d слов</string>

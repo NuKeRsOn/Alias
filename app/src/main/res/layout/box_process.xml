@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_margin="16dp"
-        android:layout_above="@id/prc_word_russian"
+        android:layout_above="@+id/prc_word_russian"
         android:textSize="28sp"
         android:textColor="@color/color_text_secondary"
         android:text="Snoop"

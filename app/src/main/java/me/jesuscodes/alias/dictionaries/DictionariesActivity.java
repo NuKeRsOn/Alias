@@ -25,7 +25,7 @@ public class DictionariesActivity extends BaseActivity implements BillingProcess
     private static final String DICTIONARY_GEO = "geo";
     private static final String DICTIONARY_BASIC_1 = "b1";
     private static final String DICTIONARY_BASIC_2 = "b2";
-    private static final String DICTIONARY_ALL = "all";
+    private static final String DICTIONARY_FULL = "full";
     private static final String DICTIONARY_SEX = "sex";
     private BillingProcessor billingProcessor;
     private DictionariesAdapter adapter = new DictionariesAdapter();
@@ -80,7 +80,7 @@ public class DictionariesActivity extends BaseActivity implements BillingProcess
                         buy(DICTIONARY_BASIC_2);
                         break;
                     case 4:
-                        buy(DICTIONARY_ALL);
+                        buy(DICTIONARY_FULL);
                         break;
                     case 5:
                         Intent shareIntent = new Intent();
@@ -102,19 +102,10 @@ public class DictionariesActivity extends BaseActivity implements BillingProcess
             }
         });
         dictionariesList.addFooterView(aboutView, null, false);
+        String billingKey = getString(R.string.billinLicenseKey);
         billingProcessor = new BillingProcessor(
                 this,
-                "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMII" +
-                        "BCgKCAQEAp898Rf984tibHTq6pbIbpTxlNt1" +
-                        "UJPsJEbyQ2DWOQ9Om/zqEN0vVM40SMaHeY3S" +
-                        "ZM9Y7bHtA1tt+BIyxh1OKyhTKn0+PJvkji1Q" +
-                        "oaTSRPI6naTPV6Ou+Un24a1F22+Knbi1E/L4" +
-                        "yR0OrNhX0mdMPH3KQcPnzdQJ4joEJGnk9VV0" +
-                        "U2t1uNQcrLno0BEM4E133HpGjX2YzTSG98Kk" +
-                        "NenSFcbQR7oQxZSFVaMr/awE9bl6mHg1tfu0" +
-                        "mNyxJoKHKGUaRpmuSCKANzNrs0OkzGeYPtqV" +
-                        "qj9CYVaHIDjE8yH0WnsCgSs9ajFucZfF3eKN" +
-                        "+1hZDdDT1qzN99sky9PSouiVtowIDAQAB",
+                billingKey,
                 this);
 
     }
@@ -205,7 +196,7 @@ public class DictionariesActivity extends BaseActivity implements BillingProcess
                     countView.setText(getString(R.string.dictionary_count, 600));
                     break;
                 case 4:
-                    titleView.setText(R.string.dictionary_all);
+                    titleView.setText(R.string.dictionary_full);
                     costView.setText("$2.49");
                     countView.setText(getString(R.string.dictionary_count, 1700));
                     break;
@@ -226,7 +217,7 @@ public class DictionariesActivity extends BaseActivity implements BillingProcess
 
     private boolean dictionaryActivated(int position) {
 
-        if (prefs.getBoolean("all",false)){
+        if (prefs.getBoolean("full",false)){
             return true;
         }
 

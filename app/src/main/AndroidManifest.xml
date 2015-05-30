@@ -26,10 +26,6 @@
             android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
-            android:name="org.jesuscodes.alias.settings.SettingsActivity"
-            android:label="@string/title_activity_settings">
-        </activity>
-        <activity
             android:name="me.jesuscodes.alias.dictionaries.DictionariesActivity"
             android:label="@string/dictionaries_activity_title" >
         </activity>

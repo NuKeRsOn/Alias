@@ -15,7 +15,7 @@
     <string name="dictionary_rate">Give 5 stars :)</string>
     <string name="dictionary_basic_1">Basic 1</string>
     <string name="dictionary_basic_2">Basic 2</string>
-    <string name="dictionary_all">All dictionaries</string>
+    <string name="dictionary_full">All dictionaries</string>
     <string name="dictionary_added">added</string>
     <string name="supported">Supported by</string>
     <string name="player_turn">%s\'s turn</string>
@@ -46,9 +46,7 @@
     <string name="free">Free</string>
     <string name="teams_played">%s team plays</string>
     <string name="title_activity_settings">Settings</string>
-
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="billinLicenseKey" translatable="false">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn60rtIhVSQ7sHNmDW/3ZcIgkk0AZCiz4MhmTdgVV2fDw3bYLNWbVOBBXELGKdAaqqhgkwWI8V0A0K/gsfronJjUcdCAcJaJt4Q+H6CqQDhss2QG6qU47uHcuPTxLKcpYO7fiao39MOXVTGOV5VDwdja4tWEcRu9DGVMKyYM587esbOlMqhOVR4kdr5W2djeAPrCZ+3f0h5e/XmnimqOjwJnDUFLjPBHKX/f5E2Qr/6j9nxlzagzRNm7y7QrqyV5lUlVxO14y1e7CxNucsnkqSZpL9sj/bzrXyo3Vore3HyTjY3qw9d4r9aqlz3ks/ANZkPdlm6+pgqAZO+HmjjFtawIDAQAB</string>
 
 
 </resources>
