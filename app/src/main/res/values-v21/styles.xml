@@ -3,9 +3,9 @@
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
-        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimary">@color/primary</item>
         <item name="colorAccent">@color/color_accent</item>
-        <item name="android:colorControlActivated">@color/color_primary</item>
+        <item name="android:colorControlActivated">@color/primary</item>
         <item name="android:windowTranslucentStatus">true</item>
 
     </style>
