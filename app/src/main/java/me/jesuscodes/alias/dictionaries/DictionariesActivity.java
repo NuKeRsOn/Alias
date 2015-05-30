@@ -216,10 +216,10 @@ public class DictionariesActivity extends BaseActivity implements BillingProcess
     }
 
     private boolean dictionaryActivated(int position) {
-
-        if (prefs.getBoolean("full",false)){
-            return true;
-        }
+        if(position>0)
+            if (prefs.getBoolean("full",false)){
+                return true;
+            }
 
         String dictionaryCode = "";
         switch (position) {

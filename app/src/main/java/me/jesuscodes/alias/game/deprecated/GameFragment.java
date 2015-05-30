@@ -15,15 +15,15 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import me.jesuscodes.alias.R;
 import me.jesuscodes.alias.models.AliasDictionary;
 import me.jesuscodes.alias.models.AliasTeam;
 import me.jesuscodes.alias.models.AliasWord;
 import me.jesuscodes.alias.util.base.BaseFragment;
-
-import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * Created by Jesus Christ. Amen.
@@ -145,7 +145,7 @@ public class GameFragment extends BaseFragment {
             return;
         }
         currentTeam.addWord(currentWord);
-        wordView.setText(currentWord.body);
+        wordView.setText(currentWord.bodyRu);
     }
 
     private void gameOver() {
@@ -217,7 +217,7 @@ public class GameFragment extends BaseFragment {
             TextView wordView = (TextView) itemView.findViewById(R.id.word);
             ImageView statusView = (ImageView) itemView.findViewById(R.id.image);
             AliasWord word = getItem(position);
-            wordView.setText(word.body);
+            wordView.setText(word.bodyRu);
 
             if(word.isGuessed()){
                 statusView.setBackgroundResource(R.drawable.word_guessed_background);

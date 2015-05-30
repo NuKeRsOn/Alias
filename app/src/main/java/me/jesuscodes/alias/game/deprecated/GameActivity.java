@@ -2,15 +2,13 @@ package me.jesuscodes.alias.game.deprecated;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+
+import java.util.ArrayList;
 
 import me.jesuscodes.alias.R;
 import me.jesuscodes.alias.dictionaries.Dictionaries;
 import me.jesuscodes.alias.models.AliasDictionary;
 import me.jesuscodes.alias.models.AliasTeam;
-
-import java.util.ArrayList;
-import java.util.Locale;
 
 
 public class GameActivity extends Activity {
@@ -31,12 +29,8 @@ public class GameActivity extends Activity {
 //                    .commit();
 //        }
 
-        String langCode = PreferenceManager.getDefaultSharedPreferences(this).getString("pref_lang", "en");
-        if (langCode.equals("ru") || Locale.getDefault().getISO3Language().equals("ru")) {
-            dictionary = Dictionaries.getAll(this, R.raw.default_ru);
-        } else {
-            dictionary = Dictionaries.getAll(this, R.raw.default_en);
-        }
+
+        dictionary = Dictionaries.getDictionary();
     }
 
 
