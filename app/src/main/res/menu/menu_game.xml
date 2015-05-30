@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="org.happysanta.alias.game.deprecated.GameActivity">
+    tools:context="me.jesuscodes.alias.game.deprecated.GameActivity">
     <item android:id="@+id/action_dictionaries" android:title="@string/settings"
         android:orderInCategory="100" android:showAsAction="never" />
 </menu>
