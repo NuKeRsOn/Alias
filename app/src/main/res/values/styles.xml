@@ -5,7 +5,7 @@
 
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorAccent">@color/color_accent</item>
-        <item name="android:colorControlActivated">@color/color_primary</item>
+        <item name="colorControlActivated">@color/color_primary</item>
 
     </style>
 

@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,7 +21,7 @@ import com.anjlab.android.iab.v3.TransactionDetails;
 
 import org.happysanta.alias.R;
 
-public class DictionariesActivity extends ActionBarActivity implements BillingProcessor.IBillingHandler {
+public class DictionariesActivity extends AppCompatActivity implements BillingProcessor.IBillingHandler {
 
     private static final String DICTIONARY_GEO = "geo";
     private static final String DICTIONARY_BASIC_1 = "b1";
