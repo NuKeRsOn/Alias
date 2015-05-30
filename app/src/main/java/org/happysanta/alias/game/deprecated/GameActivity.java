@@ -1,4 +1,4 @@
-package org.happysanta.alias.game;
+package org.happysanta.alias.game.deprecated;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -60,9 +60,9 @@ public class GameActivity extends Activity {
     public void ready() {
         // какая команда играет, какой раунд
         //todo Слова при новой загрузке
-        getFragmentManager().beginTransaction()
-                .replace(R.id.container, new GameFragment())
-                .commit();
+//        getFragmentManager().beginTransaction()
+//                .replace(R.id.container, new GameFragment())
+//                .commit();
 
     }
 

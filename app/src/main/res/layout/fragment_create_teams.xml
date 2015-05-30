@@ -47,7 +47,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
-        android:textColor="@color/primary"
+        android:textColor="@color/color_primary"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:text="@string/play_game"
         android:textSize="18sp"

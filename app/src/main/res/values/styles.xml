@@ -3,10 +3,10 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
-        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimary">@color/color_primary</item>
         <item name="colorAccent">@color/color_accent</item>
-        <item name="colorControlActivated">@color/primary</item>
-        <item name="colorControlNormal">@color/primary</item>
+        <item name="colorControlActivated">@color/color_primary</item>
+        <item name="colorControlNormal">@color/color_primary</item>
         <item name="android:editTextStyle">@style/editText</item>
         <item name="android:windowBackground">@color/color_window_background</item>
 
@@ -16,7 +16,7 @@
         <!--<item name="actionMenuTextColor">#fff</item>&lt;!&ndash; actionbar buttons text color &ndash;&gt;-->
         <item name="android:textColorPrimary">#000</item><!-- actionbar text color -->
         <item name="android:textColorSecondary">#444</item><!-- actionbar buttons color -->
-        <item name="colorControlNormal">@color/primary</item>
+        <item name="colorControlNormal">@color/color_primary</item>
     </style>
 
     <style name="actionbar_popup" parent="ThemeOverlay.AppCompat.Light"/>

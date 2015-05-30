@@ -10,7 +10,7 @@
         android:layout_marginBottom="8dp"
         android:id="@+id/team"
         android:layout_centerInParent="true"
-        android:text="@string/teams_turn"
+        android:text="@string/player_turn"
         android:layout_above="@+id/time_remaining"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

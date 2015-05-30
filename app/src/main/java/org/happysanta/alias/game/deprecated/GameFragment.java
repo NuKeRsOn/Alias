@@ -1,7 +1,6 @@
-package org.happysanta.alias.game;
+package org.happysanta.alias.game.deprecated;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
@@ -17,9 +16,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.happysanta.alias.R;
+import org.happysanta.alias.game.deprecated.GameActivity;
 import org.happysanta.alias.models.AliasDictionary;
 import org.happysanta.alias.models.AliasTeam;
 import org.happysanta.alias.models.AliasWord;
+import org.happysanta.alias.util.base.BaseFragment;
 
 import java.util.ArrayList;
 import java.util.Timer;
@@ -28,7 +29,7 @@ import java.util.TimerTask;
 /**
  * Created by Jesus Christ. Amen.
  */
-public class  GameFragment extends Fragment {
+public class GameFragment extends BaseFragment {
 
 
     private ArrayList<AliasTeam> teams;

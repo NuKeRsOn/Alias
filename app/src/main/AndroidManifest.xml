@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.happysanta.alias.game.GameActivity"
+            android:name=".game.deprecated.GameActivity"
             android:label="@string/title_activity_game"
             android:windowSoftInputMode="adjustPan" >
         </activity>

@@ -1,4 +1,4 @@
-package org.happysanta.alias.game;
+package org.happysanta.alias.game.deprecated;
 
 import android.app.Activity;
 import android.app.Fragment;

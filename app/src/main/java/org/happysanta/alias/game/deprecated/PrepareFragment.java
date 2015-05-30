@@ -1,4 +1,4 @@
-package org.happysanta.alias.game;
+package org.happysanta.alias.game.deprecated;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -42,7 +42,7 @@ public class PrepareFragment extends Fragment {
         Bundle args = getArguments();
         teamName = args.getString("team_name");
 
-        teamView.setText(getString(R.string.teams_turn, teamName));
+        teamView.setText(getString(R.string.player_turn, teamName));
         return rootView;
     }
 

@@ -10,7 +10,7 @@
     <string name="dictionaries">Словари</string>
     <string name="lions">Львы</string>
     <string name="dogs">Собаки</string>
-    <string name="teams_turn">Играет команда %s</string>
+    <string name="player_turn">Играет %s</string>
     <string name="seconds">%d секунд</string>
     <string name="start_in">Игра начнётся через %d</string>
     <string name="teams_played">Играет команда %s</string>

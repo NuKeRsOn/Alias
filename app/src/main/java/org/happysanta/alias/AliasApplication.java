@@ -7,6 +7,7 @@ import com.google.android.gms.analytics.GoogleAnalytics;
 import org.happysanta.alias.util.Dimen;
 import org.happysanta.alias.util.Prefs;
 import org.happysanta.alias.util.Toaster;
+import org.happysanta.alias.util.base.ColorUtil;
 
 /**
  * Created by Jesus Christ. Amen.
@@ -27,6 +28,7 @@ public class AliasApplication extends Application {
         }
 
         Dimen.init(this);
+        ColorUtil.init(this);
         Prefs.init(this);
         Toaster.init(this);
     }

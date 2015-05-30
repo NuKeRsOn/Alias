@@ -7,7 +7,7 @@
     <color name="timer">#3498db</color>
     <color name="divider">#c8c7cc</color>
 
-    <color name="primary">#007aff</color>
+    <color name="color_primary">#007aff</color>
     <!--<item name="color_primary_dark" type="color">#2c94bc</item>-->
     <color name="color_window_background">#ffffffff</color>
     <color name="color_accent">#34aedd</color>
@@ -17,7 +17,16 @@
     <color name="color_settings_title">#9ca4a7</color>
     <color name="color_main_element">#093e59</color>
 
+    <color name="color_text_primary">#007aff</color>
+    <color name="color_text_secondary">#323232</color>
+
+    <color name="color_team_red">#e74c3c</color>
+    <color name="color_team_yellow">#f39c12</color>
+    <color name="color_team_green">#2ecc71</color>
+    <color name="color_team_blue">#3498db</color>
+    <color name="color_team_purple">#9b59b6</color>
+
     <color name="edittext_color_default">#9ca4a7</color>
-    <color name="edittext_color_blue">@color/primary</color>
+    <color name="edittext_color_blue">@color/color_primary</color>
 
 </resources>

@@ -1,7 +1,6 @@
 package org.happysanta.alias.start;
 
 import android.os.Bundle;
-import android.view.Menu;
 
 import org.happysanta.alias.R;
 import org.happysanta.alias.game.CreateTeamsFragment;

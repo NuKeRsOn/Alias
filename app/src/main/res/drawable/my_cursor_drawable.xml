@@ -4,7 +4,7 @@
     >
     <item android:bottom="2dp" android:top="2dp">
         <shape>
-            <solid android:color="@color/primary"/>
+            <solid android:color="@color/color_primary"/>
             <size android:width="2dp"/>
 
         </shape>
