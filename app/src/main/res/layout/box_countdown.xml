@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="32dp"
-    android:gravity="center"
-    android:visibility="gone">
+    android:gravity="center">
 
     <TextView
         android:id="@+id/cd_team_name"
@@ -24,8 +23,20 @@
         android:layout_below="@+id/cd_team_name"
         android:layout_centerHorizontal="true"
         android:layout_margin="16dp"
+        android:visibility="invisible"
         android:textColor="@color/color_text_secondary"
         android:textSize="18sp"
         android:text="@string/prepare_time"/>
+
+    <Button
+        android:id="@+id/cd_ready_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:textColor="@color/color_text_primary"
+        android:textSize="21sp"
+        android:text="Ready!"/>
 
 </RelativeLayout>

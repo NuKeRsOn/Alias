@@ -20,7 +20,7 @@
         android:layout_height="wrap_content">
 
         <ProgressBar
-            android:id="@+id/timer_progress"
+            android:id="@+id/prc_timer_progress"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:padding="2dp"
@@ -32,7 +32,7 @@
             android:progress="0"
             style="?android:attr/progressBarStyleHorizontal"/>
         <TextView
-            android:id="@+id/timer_text"
+            android:id="@+id/prc_timer_text"
             android:layout_marginLeft="8dp"
             android:text="1:00"
             android:textColor="@color/timer"
@@ -92,7 +92,7 @@
             android:background="@drawable/false_button"
             android:src="@drawable/x_selector"
             android:scaleType="centerInside"
-            android:id="@+id/word_niok"
+            android:id="@+id/prc_wrong"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:layout_marginRight="35dp"/>
@@ -100,7 +100,7 @@
             android:textColor="#ffffff"
             android:background="@drawable/true_button"
             android:src="@drawable/v_selector"
-            android:id="@+id/word_ok"
+            android:id="@+id/prc_correct"
             android:layout_width="65dp"
             android:layout_marginLeft="35dp"
             android:layout_height="65dp" />

@@ -7,22 +7,35 @@ import java.util.ArrayList;
  */
 public class AliasTeam {
 
-    private String name;
-    public ArrayList<AliasWord> words= new ArrayList<>();
+    private int mTeamColor;
+    private String mTeamName;
+    private ArrayList<AliasWord> mWords = new ArrayList<>();
 
     public AliasTeam(String name){
-        this.name = name;
+        this.mTeamName = name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.mTeamName = name;
     }
 
     public String getName() {
-        return name;
+        return mTeamName;
+    }
+
+    public int getTeamColor() {
+        return mTeamColor;
+    }
+
+    public void setTeamColor(int teamColor) {
+        mTeamColor = teamColor;
     }
 
     public void addWord(AliasWord word) {
-        words.add(word);
+        mWords.add(word);
+    }
+
+    public ArrayList<AliasWord> getWords() {
+        return mWords;
     }
 }

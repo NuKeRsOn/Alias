@@ -6,11 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
 import me.jesuscodes.alias.R;
 import me.jesuscodes.alias.models.AliasTeam;
 import me.jesuscodes.alias.util.TextWatcherAdapter;
-
-import java.util.ArrayList;
 
 /**
  * Created by alex
@@ -99,6 +99,17 @@ public class TeamsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     }
 
     public ArrayList<AliasTeam> getAliasTeams() {
-        return mAliasTeamList;
+
+        ArrayList<AliasTeam> resultTeams = new ArrayList<>();
+
+        for (int i = 0; i < mAliasTeamList.size(); i++) {
+
+            AliasTeam team = mAliasTeamList.get(i);
+            team.setTeamColor(i);
+
+            if (!team.getName().isEmpty()) resultTeams.add(team);
+        }
+
+        return resultTeams;
     }
 }

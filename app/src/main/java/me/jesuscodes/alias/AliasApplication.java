@@ -4,10 +4,10 @@ import android.app.Application;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 
+import me.jesuscodes.alias.util.ColorUtil;
 import me.jesuscodes.alias.util.Dimen;
 import me.jesuscodes.alias.util.Prefs;
 import me.jesuscodes.alias.util.Toaster;
-import me.jesuscodes.alias.util.base.ColorUtil;
 
 /**
  * Created by Jesus Christ. Amen.

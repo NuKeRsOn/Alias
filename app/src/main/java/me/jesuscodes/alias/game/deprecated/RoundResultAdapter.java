@@ -6,11 +6,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import me.jesuscodes.alias.R;
 import me.jesuscodes.alias.models.AliasTeam;
 import me.jesuscodes.alias.models.AliasWord;
-
-import java.util.ArrayList;
 
 /**
  * Created by Jesus Christ. Amen.
@@ -69,11 +69,11 @@ public class RoundResultAdapter extends BaseAdapter {
         }
 
         int wordsCounter =0;
-        for (AliasWord word : team.words) {
-            if (word.isGuessed()) {
-                wordsCounter++;
-            }
-        }
+//        for (AliasWord word : team.words) {
+//            if (word.isGuessed()) {
+//                wordsCounter++;
+//            }
+//        }
 
         scoreView.setText("" + wordsCounter);
         if(position==0){

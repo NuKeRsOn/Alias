@@ -1,30 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
-    <TextView
-        android:id="@+id/prc_word_english"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_margin="16dp"
-        android:layout_above="@+id/prc_word_russian"
-        android:textSize="28sp"
-        android:textColor="@color/color_text_secondary"
-        android:text="Snoop"
-        />
+        android:gravity="center_horizontal"
+        android:layout_margin="16dp">
+
+        <ProgressBar
+            android:id="@+id/prc_timer_progress"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/timer"
+            android:background="@drawable/timer_background"
+            android:max="60"
+            android:progress="0"
+            style="?android:attr/progressBarStyleHorizontal"/>
+
+        <TextView
+            android:id="@+id/prc_timer_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/prc_timer_progress"
+            android:layout_toEndOf="@id/prc_timer_progress"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:textColor="@color/timer"
+            android:textSize="21sp"
+            android:text="1:00"/>
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/prc_word_russian"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_margin="16dp"
+        android:layout_margin="4dp"
+        android:gravity="center_horizontal"
         android:textSize="28sp"
         android:textColor="@color/color_text_secondary"
         android:text="Пёс"
         />
+
+    <TextView
+        android:id="@+id/prc_word_english"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="4dp"
+        android:layout_above="@id/prc_word_russian"
+        android:gravity="center_horizontal"
+        android:textSize="28sp"
+        android:textColor="@color/color_text_secondary"
+        android:text="Snoop"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:layout_margin="16dp"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/prc_wrong"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:clickable="true"
+            android:scaleType="centerInside"
+            android:background="@drawable/false_button"
+            android:src="@drawable/x_selector"
+            tools:ignore="ContentDescription"/>
+
+        <ImageView
+            android:id="@+id/prc_correct"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:clickable="true"
+            android:scaleType="centerInside"
+            android:background="@drawable/true_button"
+            android:src="@drawable/v_selector"
+            tools:ignore="ContentDescription"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>
