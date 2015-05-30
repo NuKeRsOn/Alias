@@ -40,15 +40,12 @@ public class TeamHolder extends RecyclerView.ViewHolder {
     }
 
     private void initContent(View itemView) {
-
         mTeamIcon = (ImageView) itemView.findViewById(R.id.item_team_color);
         mTeamNameEdit = (EditText) itemView.findViewById(R.id.item_team_enter_name);
     }
 
     public int selectColor(int position) {
-
         switch (position) {
-
             case 0: return TEAM_RED;
             case 1: return TEAM_YELLOW;
             case 2: return TEAM_GREEN;

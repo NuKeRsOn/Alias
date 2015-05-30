@@ -37,7 +37,6 @@ public class CreateTeamsFragment extends BaseFragment {
         TeamsAdapter mTeamsAdapter = new TeamsAdapter();
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(
-
                 getActivity(),
                 LinearLayoutManager.VERTICAL,
                 false

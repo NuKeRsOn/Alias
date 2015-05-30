@@ -21,10 +21,8 @@ public class TeamsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     private static final int TYPE_ADD_BUTTON = 2;
 
     private ArrayList<AliasTeam> mAliasTeamList = new ArrayList<AliasTeam>() {{
-
         add(new AliasTeam("Lions"));
         add(new AliasTeam("Dawgs"));
-
     }};
 
     @Override
@@ -33,27 +31,20 @@ public class TeamsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         RecyclerView.ViewHolder holder;
 
         switch (viewType) {
-
             case TYPE_TEAM : {
-
                 View itemView = LayoutInflater
                         .from(parent.getContext())
                         .inflate(R.layout.item_team_add, parent, false);
-
                 holder = new TeamHolder(itemView);
                 break;
             }
-
             case TYPE_ADD_BUTTON : {
-
                 View itemView = LayoutInflater
                         .from(parent.getContext())
                         .inflate(R.layout.item_team_add_button, parent, false);
-
                 holder = new AddButtonHolder(itemView);
                 break;
             }
-
             default: holder = null;
         }
 
@@ -71,17 +62,13 @@ public class TeamsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
 
         if (holder instanceof TeamHolder) {
-
             final AliasTeam team = mAliasTeamList.get(position);
-
             TeamHolder teamHolder = (TeamHolder) holder;
             teamHolder.bindContent(team, position);
-
             teamHolder.mTeamNameEdit.addTextChangedListener(new TextWatcherAdapter() {
                 @Override
                 public void afterTextChanged(Editable s) {
                     super.afterTextChanged(s);
-
                     team.setName(s.toString().trim());
                 }
             });
@@ -89,13 +76,15 @@ public class TeamsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         } else {
 
             AddButtonHolder addButtonHolder = (AddButtonHolder) holder;
-
             addButtonHolder.bindContent(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     mAliasTeamList.add(new AliasTeam(""));
-                    notifyDataSetChanged();
+                    if(mAliasTeamList.size()==5)
+                        notifyItemChanged(4);
+                    else
+                        notifyItemInserted(mAliasTeamList.size());
+
                 }
             });
         }
