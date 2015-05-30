@@ -12,6 +12,6 @@
         android:id="@+id/action_settings"
         android:title="@string/settings"
         android:orderInCategory="200"
-        android:icon="@drawable/ic_setting_light"
+        android:icon="@drawable/ic_settings"
         app:showAsAction="always" />
 </menu>
