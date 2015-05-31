@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp">
+
+    <TextView
+        android:id="@+id/res_footer_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textSize="14sp"
+        android:textColor="@color/color_text_primary_simple"
+        android:text="@string/talk_friends" />
+
+    <ImageView
+        android:id="@+id/res_footer_facebook"
+        android:layout_height="96dp"
+        android:layout_width="96dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/res_footer_message"
+        android:layout_margin="8dp"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/fb"
+        tools:ignore="ContentDescription"/>
+
+    <ImageView
+        android:id="@+id/res_footer_vk"
+        android:layout_height="96dp"
+        android:layout_width="96dp"
+        android:layout_toLeftOf="@id/res_footer_facebook"
+        android:layout_toStartOf="@id/res_footer_facebook"
+        android:layout_below="@id/res_footer_message"
+        android:layout_margin="8dp"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/vk"
+        tools:ignore="ContentDescription"/>
+
+    <ImageView
+        android:id="@+id/res_footer_twitter"
+        android:layout_height="96dp"
+        android:layout_width="96dp"
+        android:layout_toRightOf="@id/res_footer_facebook"
+        android:layout_toEndOf="@id/res_footer_facebook"
+        android:layout_below="@id/res_footer_message"
+        android:layout_margin="8dp"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/twitter"
+        tools:ignore="ContentDescription"/>
+
+    <Button
+        android:id="@+id/res_footer_new_game"
+        android:layout_width="match_parent"
+        android:layout_height="?listPreferredItemHeight"
+        android:layout_below="@id/res_footer_facebook"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="start|center_vertical"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/color_text_primary_styled"
+        android:text="@string/new_game" />
+
+    <View
+        android:id="@+id/res_footer_button_separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/res_footer_new_game"
+        android:background="#dbdbdb"/>
+
+    <Button
+        android:id="@+id/res_footer_replay"
+        android:layout_width="match_parent"
+        android:layout_height="?listPreferredItemHeight"
+        android:layout_below="@id/res_footer_button_separator"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="start|center_vertical"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/color_text_primary_styled"
+        android:text="@string/replay" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/res_footer_replay"
+        android:background="#dbdbdb"/>
+
+</RelativeLayout>

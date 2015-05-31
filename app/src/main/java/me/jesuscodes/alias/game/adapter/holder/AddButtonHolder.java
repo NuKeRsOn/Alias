@@ -1,4 +1,4 @@
-package me.jesuscodes.alias.game.adapter;
+package me.jesuscodes.alias.game.adapter.holder;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

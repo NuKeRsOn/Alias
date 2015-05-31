@@ -16,7 +16,7 @@
         android:layout_height="45dp"
         android:layout_marginRight="15dp"/>
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/res_team_name"
         android:textColor="#34495e"
         android:text="Team name"
         android:textSize="15dp"
@@ -25,19 +25,19 @@
         android:layout_height="wrap_content" />
     <TextView
         android:layout_marginTop="7dp"
-        android:id="@+id/place"
+        android:id="@+id/res_team_place"
         android:text="place: 1"
         android:textSize="9dp"
         android:textColor="#afb7bf"
         android:layout_toRightOf="@+id/add_icon"
-        android:layout_below="@+id/name"
+        android:layout_below="@+id/res_team_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <View
         android:layout_marginLeft="73dp"
         android:layout_marginTop="8dp"
         android:background="#dbdbdb"
-        android:layout_below="@+id/place"
+        android:layout_below="@+id/res_team_place"
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
 </RelativeLayout>

@@ -9,6 +9,10 @@ import me.jesuscodes.alias.models.AliasTeam;
  */
 public interface GameActionsListener {
 
-    void onGameStart(ArrayList<AliasTeam> teams);
-    void onGameEnd(ArrayList<AliasTeam> teams);
+    void onStartGame(ArrayList<AliasTeam> teams);
+    void onFinishGame();
+    void onFinishRound(ArrayList<AliasTeam> teams);
+    void onStartRound();
+    void onRestartGame();
+    void onRecreateGame();
 }

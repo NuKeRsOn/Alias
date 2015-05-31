@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_margin="16dp"
-        android:textColor="@color/color_text_primary"
+        android:textColor="@color/color_text_primary_styled"
         android:textSize="30sp"
         android:text="@string/player_turn"/>
 
@@ -24,7 +24,7 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="16dp"
         android:visibility="invisible"
-        android:textColor="@color/color_text_secondary"
+        android:textColor="@color/color_text_primary_simple"
         android:textSize="18sp"
         android:text="@string/prepare_time"/>
 
@@ -35,7 +35,7 @@
         android:layout_centerInParent="true"
         android:layout_margin="16dp"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:textColor="@color/color_text_primary"
+        android:textColor="@color/color_text_primary_styled"
         android:textSize="21sp"
         android:text="Ready!"/>
 

@@ -29,17 +29,6 @@
         android:overScrollMode="never"
         />
 
-    <include
-        layout="@layout/item_team_add_button"
-        android:id="@+id/create_add_team_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_below="@id/create_teams_list"
-        />
-
     <Button
         android:id="@+id/create_play"
         android:layout_width="wrap_content"

@@ -69,7 +69,7 @@ public class CreateTeamsFragment extends BaseFragment {
 
                 if (mTeams.size() > 1) {
 
-                    mGameActionsListener.onGameStart(mTeams);
+                    mGameActionsListener.onStartGame(mTeams);
 
                 } else {
 

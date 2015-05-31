@@ -17,13 +17,15 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import me.jesuscodes.alias.R;
-import me.jesuscodes.alias.dictionaries.Dictionaries;
 import me.jesuscodes.alias.models.AliasDictionary;
 import me.jesuscodes.alias.models.AliasTeam;
 import me.jesuscodes.alias.models.AliasWord;
 import me.jesuscodes.alias.util.base.BaseFragment;
 
-import static me.jesuscodes.alias.start.StartActivity.getTeams;
+import static me.jesuscodes.alias.start.MainActivity.getCurrentIndex;
+import static me.jesuscodes.alias.start.MainActivity.getCurrentTeam;
+import static me.jesuscodes.alias.start.MainActivity.getDictionary;
+import static me.jesuscodes.alias.start.MainActivity.getPlayingTeams;
 
 public class GamePlayFragment extends BaseFragment {
 
@@ -31,10 +33,7 @@ public class GamePlayFragment extends BaseFragment {
 
     //region Game process data
 
-    private ArrayList<AliasTeam> mPlayingTeams = new ArrayList<>();
     private ArrayList<AliasTeam> mResultingTeams = new ArrayList<>();
-
-    private int mCurrentTeamIndex = 0;
 
     private AliasTeam mCurrentTeam;
     private AliasDictionary mDictionary;
@@ -87,11 +86,9 @@ public class GamePlayFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
 
         mHandler = new Handler();
-
-        mPlayingTeams = getTeams();
-        mCurrentTeam = mPlayingTeams.get(mCurrentTeamIndex);
-
-        mDictionary = Dictionaries.getDictionary();
+        mResultingTeams = getPlayingTeams();
+        mCurrentTeam = getCurrentTeam();
+        mDictionary = getDictionary();
 
         initGameProcess();
         initCountDown();
@@ -230,22 +227,8 @@ public class GamePlayFragment extends BaseFragment {
 
     private void finishRound() {
 
-        mResultingTeams.add(mCurrentTeam);
-        mCurrentTeamIndex++;
-
-        if (mCurrentTeamIndex == mPlayingTeams.size()) {
-
-            finishGame();
-            return;
-        }
-
-        mCurrentTeam = mPlayingTeams.get(mCurrentTeamIndex);
-        setPrepare();
-    }
-
-    private void finishGame() {
-
-        mGameActionsListener.onGameEnd(mResultingTeams);
+        mResultingTeams.set(getCurrentIndex(), mCurrentTeam);
+        mGameActionsListener.onFinishRound(mResultingTeams);
     }
 
     private void nextWord() {

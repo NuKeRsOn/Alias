@@ -7,6 +7,7 @@ import java.util.ArrayList;
  */
 public class AliasTeam {
 
+    private int mGuessedCount;
     private int mTeamColor;
     private String mTeamName;
     private ArrayList<AliasWord> mWords = new ArrayList<>();
@@ -32,10 +33,17 @@ public class AliasTeam {
     }
 
     public void addWord(AliasWord word) {
+
+        if (word.isGuessed()) mGuessedCount++;
+
         mWords.add(word);
     }
 
     public ArrayList<AliasWord> getWords() {
         return mWords;
+    }
+
+    public int getGuessedCount() {
+        return mGuessedCount;
     }
 }

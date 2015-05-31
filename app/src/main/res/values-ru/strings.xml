@@ -17,7 +17,7 @@
     <string name="show_result">Показать Результаты</string>
     <string name="play_round">Начать раунд</string>
     <string name="place">Место</string>
-    <string name="result">Результаты</string>
+    <string name="result">Результаты:</string>
     <string name="new_game">Новая игра</string>
     <string name="replay">Повторить</string>
     <string name="rules">Правила</string>

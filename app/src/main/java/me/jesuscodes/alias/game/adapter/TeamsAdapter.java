@@ -9,7 +9,10 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import me.jesuscodes.alias.R;
+import me.jesuscodes.alias.game.adapter.holder.AddButtonHolder;
+import me.jesuscodes.alias.game.adapter.holder.TeamHolder;
 import me.jesuscodes.alias.models.AliasTeam;
+import me.jesuscodes.alias.util.ColorUtil;
 import me.jesuscodes.alias.util.TextWatcherAdapter;
 
 /**
@@ -62,10 +65,13 @@ public class TeamsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
 
         if (holder instanceof TeamHolder) {
+
             final AliasTeam team = mAliasTeamList.get(position);
+
             TeamHolder teamHolder = (TeamHolder) holder;
             teamHolder.bindContent(team, position);
             teamHolder.mTeamNameEdit.addTextChangedListener(new TextWatcherAdapter() {
+
                 @Override
                 public void afterTextChanged(Editable s) {
                     super.afterTextChanged(s);
@@ -77,10 +83,13 @@ public class TeamsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
             AddButtonHolder addButtonHolder = (AddButtonHolder) holder;
             addButtonHolder.bindContent(new View.OnClickListener() {
+
                 @Override
                 public void onClick(View v) {
+
                     mAliasTeamList.add(new AliasTeam(""));
-                    if(mAliasTeamList.size()==5)
+
+                    if (mAliasTeamList.size() == 5)
                         notifyItemChanged(4);
                     else
                         notifyItemInserted(mAliasTeamList.size());
@@ -105,7 +114,7 @@ public class TeamsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         for (int i = 0; i < mAliasTeamList.size(); i++) {
 
             AliasTeam team = mAliasTeamList.get(i);
-            team.setTeamColor(i);
+            team.setTeamColor(ColorUtil.selectColor(i));
 
             if (!team.getName().isEmpty()) resultTeams.add(team);
         }

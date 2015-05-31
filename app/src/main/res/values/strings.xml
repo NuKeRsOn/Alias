@@ -24,7 +24,7 @@
     <string name="show_result">Show result</string>
     <string name="play_round">Play round</string>
     <string name="place">%d place</string>
-    <string name="result">Results</string>
+    <string name="result">Results:</string>
     <string name="talk_friends">Tell friends about the game</string>
     <string name="new_game">New game</string>
     <string name="replay">Replay</string>
@@ -47,6 +47,9 @@
     <string name="teams_played">%s team plays</string>
     <string name="title_activity_settings">Settings</string>
     <string name="billinLicenseKey" translatable="false">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn60rtIhVSQ7sHNmDW/3ZcIgkk0AZCiz4MhmTdgVV2fDw3bYLNWbVOBBXELGKdAaqqhgkwWI8V0A0K/gsfronJjUcdCAcJaJt4Q+H6CqQDhss2QG6qU47uHcuPTxLKcpYO7fiao39MOXVTGOV5VDwdja4tWEcRu9DGVMKyYM587esbOlMqhOVR4kdr5W2djeAPrCZ+3f0h5e/XmnimqOjwJnDUFLjPBHKX/f5E2Qr/6j9nxlzagzRNm7y7QrqyV5lUlVxO14y1e7CxNucsnkqSZpL9sj/bzrXyo3Vore3HyTjY3qw9d4r9aqlz3ks/ANZkPdlm6+pgqAZO+HmjjFtawIDAQAB</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

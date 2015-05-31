@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:minHeight="?attr/actionBarSize"
-        android:background="@android:color/transparent"
+        android:background="@color/color_primary"
         app:theme="@style/toolbar"
         app:popupTheme="@style/actionbar_popup"
         />

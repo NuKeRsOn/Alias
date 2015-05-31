@@ -13,7 +13,7 @@
         android:layout_height="115dp" />
 
     <TextView
-        android:id="@+id/round_finished"
+        android:id="@+id/res_header_title"
         android:textSize="30dp"
         android:textColor="#2c3e50"
         android:layout_marginTop="23dp"

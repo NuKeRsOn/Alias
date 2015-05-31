@@ -7,8 +7,8 @@
     <color name="timer">#3498db</color>
     <color name="divider">#c8c7cc</color>
 
-    <color name="color_primary">#007aff</color>
-    <!--<item name="color_primary_dark" type="color">#2c94bc</item>-->
+    <color name="color_primary">#017aff</color>
+    <item name="color_primary_dark" type="color">#026ee0</item>
     <color name="color_window_background">#ffffffff</color>
     <color name="color_accent">#34aedd</color>
     <color name="color_accent_dark">#2c94bc</color>
@@ -17,8 +17,8 @@
     <color name="color_settings_title">#9ca4a7</color>
     <color name="color_main_element">#093e59</color>
 
-    <color name="color_text_primary">#007aff</color>
-    <color name="color_text_secondary">#323232</color>
+    <color name="color_text_primary_styled">#017aff</color>
+    <color name="color_text_primary_simple">#323232</color>
 
     <color name="color_team_red">#e74c3c</color>
     <color name="color_team_yellow">#f39c12</color>
