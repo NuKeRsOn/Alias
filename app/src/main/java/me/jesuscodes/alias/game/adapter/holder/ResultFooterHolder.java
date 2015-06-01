@@ -2,7 +2,6 @@ package me.jesuscodes.alias.game.adapter.holder;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +17,7 @@ public class ResultFooterHolder extends RecyclerView.ViewHolder {
 
     private GameActionsListener mActionsListener;
     private Activity mRoot;
+    private String mShareLink;
 
     private ImageView mVk;
     private ImageView mTwitter;
@@ -38,6 +38,8 @@ public class ResultFooterHolder extends RecyclerView.ViewHolder {
 
         mReplay = (Button) itemView.findViewById(R.id.res_footer_replay);
         mNewGame = (Button) itemView.findViewById(R.id.res_footer_new_game);
+
+        mShareLink = "http://play.google.com/store/apps/details?id=" + mRoot.getPackageName();
 
         initButtons();
     }
@@ -67,14 +69,7 @@ public class ResultFooterHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
 
-                Intent shareIntent = new Intent();
-
-                shareIntent.setAction(Intent.ACTION_SEND);
-                shareIntent.putExtra(Intent.EXTRA_TEXT, "ссылка на игру");
-                shareIntent.putExtra(Intent.EXTRA_SUBJECT,"А я поиграл в Alias на андроид!");
-                shareIntent.setType("text/plain");
-
-                mRoot.startActivity(Intent.createChooser(shareIntent, "Поделиться"));
+                share(SocialNetwork.VK);
             }
         });
 
@@ -83,39 +78,7 @@ public class ResultFooterHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
 
-                try {
-
-                    mRoot.getPackageManager().getPackageInfo("com.twitter.android", 0);
-
-                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
-
-                    shareIntent.setClassName(
-                            "com.twitter.android",
-                            "com.twitter.android.composer.ComposerActivity"
-                    );
-
-                    shareIntent.setType("text/plain");
-
-                    shareIntent.putExtra(
-                            Intent.EXTRA_TEXT,
-                            "Alias for android!\n"
-                                    + "http://play.google.com/store/apps/details?id="
-                                    + mRoot.getPackageName()
-                    );
-
-                    mRoot.startActivity(shareIntent);
-
-                } catch (Exception exp) {
-
-                    String url =
-                            "http://www.twitter.com/intent/" +
-                            "tweet?url=google.com&text=Alias for android!";
-
-                    Intent i = new Intent(Intent.ACTION_VIEW);
-                    i.setData(Uri.parse(url));
-
-                    mRoot.startActivity(i);
-                }
+                share(SocialNetwork.TWITTER);
             }
         });
 
@@ -124,14 +87,62 @@ public class ResultFooterHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
 
-                Intent shareIntent = new Intent();
-                shareIntent.setAction(Intent.ACTION_SEND);
-                shareIntent.putExtra(Intent.EXTRA_TEXT, "ссылка на игру");
-                shareIntent.putExtra(Intent.EXTRA_SUBJECT,"А я поиграл в Alias на андроид!");
-                shareIntent.setType("text/plain");
-                mRoot.startActivity(Intent.createChooser(shareIntent, "Поделиться"));
+                share(SocialNetwork.FACEBOOK);
 
             }
         });
     }
+
+    private void share(SocialNetwork sn) {
+
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+
+        try {
+
+            mRoot.getPackageManager().getPackageInfo(sn.packageName, 0);
+
+            if (sn == SocialNetwork.TWITTER) {
+
+                shareIntent.setClassName(
+                        "com.twitter.android",
+                        "com.twitter.android.composer.ComposerActivity"
+                );
+            }
+
+            shareIntent.putExtra(
+                    Intent.EXTRA_TEXT,
+                    "Alias for android!\n" + mShareLink
+            );
+
+            mRoot.startActivity(shareIntent);
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+            shareIntent.putExtra(
+                    Intent.EXTRA_TEXT,
+                    "Alias for android!\n" + mShareLink
+            );
+
+            mRoot.startActivity(Intent.createChooser(shareIntent, "Поделиться"));
+        }
+
+    }
+
+    private enum SocialNetwork {
+
+        TWITTER("com.twitter.android"),
+        FACEBOOK("com.facebook.android"),
+        VK("com.vkontakte.android");
+
+        final String packageName;
+
+        SocialNetwork(String packageName) {
+
+            this.packageName = packageName;
+        }
+    }
+
 }

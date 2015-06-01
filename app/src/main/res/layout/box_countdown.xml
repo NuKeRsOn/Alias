@@ -6,6 +6,7 @@
     android:padding="32dp"
     android:gravity="center">
 
+
     <TextView
         android:id="@+id/cd_team_name"
         android:layout_width="wrap_content"
@@ -15,6 +16,7 @@
         android:textColor="@color/color_text_primary_styled"
         android:textSize="30sp"
         android:text="@string/player_turn"/>
+
 
     <TextView
         android:id="@+id/cd_time"
@@ -32,7 +34,8 @@
         android:id="@+id/cd_ready_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_below="@+id/cd_time"
+        android:layout_centerHorizontal="true"
         android:layout_margin="16dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:textColor="@color/color_text_primary_styled"

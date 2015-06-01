@@ -18,14 +18,8 @@
             android:configChanges="keyboardHidden|orientation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name="me.jesuscodes.alias.game.deprecated.GameActivity"
-            android:label="@string/title_activity_game"
-            android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
             android:name="me.jesuscodes.alias.dictionaries.DictionariesActivity"

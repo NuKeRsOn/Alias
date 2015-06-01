@@ -46,39 +46,39 @@ public class MainActivity extends BaseActivity implements GameActionsListener {
         sClearTeams = teams;
         sPlayingTeams = teams;
 
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, new GamePlayFragment()).commit();
+
         mToolbar.setBackgroundColor(ColorUtil.get(android.R.color.transparent));
         mToolbar.setTitle("");
 
         setSupportActionBar(mToolbar);
-
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new GamePlayFragment()).commit();
     }
 
     @Override
     public void onStartRound() {
 
-        mToolbar.setBackgroundColor(ColorUtil.get(android.R.color.transparent));
-        mToolbar.setTitle("");
-
-        setSupportActionBar(mToolbar);
-
         sCurrentIndex++;
 
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new GamePlayFragment()).commit();
+
+        mToolbar.setBackgroundColor(ColorUtil.get(android.R.color.transparent));
+        mToolbar.setTitle("");
+
+        setSupportActionBar(mToolbar);
     }
 
     @Override
     public void onFinishGame() {
 
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, new ResultGameFragment()).commit();
+
         mToolbar.setBackgroundColor(ColorUtil.get(R.color.color_primary));
         mToolbar.setTitle("Game results");
 
         setSupportActionBar(mToolbar);
-
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new ResultGameFragment()).commit();
     }
 
     @Override
@@ -86,15 +86,15 @@ public class MainActivity extends BaseActivity implements GameActionsListener {
 
         sPlayingTeams = teams;
 
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, new ResultTeamFragment()).commit();
+
         mToolbar.setBackgroundColor(ColorUtil.get(R.color.color_primary));
         mToolbar.setTitle(
                 String.format("Words guessed by %s", getCurrentTeam().getName())
         );
 
         setSupportActionBar(mToolbar);
-
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new ResultTeamFragment()).commit();
     }
 
     @Override
@@ -106,13 +106,13 @@ public class MainActivity extends BaseActivity implements GameActionsListener {
     @Override
     public void onRecreateGame() {
 
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, new CreateTeamsFragment()).commit();
+
         mToolbar.setBackgroundColor(ColorUtil.get(android.R.color.transparent));
         mToolbar.setTitle("");
 
         setSupportActionBar(mToolbar);
-
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new CreateTeamsFragment()).commit();
     }
 
     public static ArrayList<AliasTeam> getPlayingTeams() {

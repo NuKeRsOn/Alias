@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,9 +41,9 @@ public class DictionariesActivity extends BaseActivity implements BillingProcess
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dictionaries);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
-        setSupportActionBar(toolbar);
+
+        mToolbar.setNavigationIcon(R.drawable.ic_action_navigation_arrow_back);
+        setSupportActionBar(mToolbar);
 
         prefs = getSharedPreferences("dictionaries", MODE_MULTI_PROCESS);
 

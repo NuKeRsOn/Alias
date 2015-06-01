@@ -190,6 +190,7 @@ public class GamePlayFragment extends BaseFragment {
     protected void onBackPressed() {
         super.onBackPressed();
 
+
     }
 
     @Override
@@ -234,9 +235,9 @@ public class GamePlayFragment extends BaseFragment {
     private void nextWord() {
 
         mCurrentWord = mDictionary.pullWord();
-
         mEngWord.setText(mCurrentWord.bodyEn);
         mRusWord.setText(mCurrentWord.bodyRu);
+
     }
 
     private void setPrepareTimer() {
