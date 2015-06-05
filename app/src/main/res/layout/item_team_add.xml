@@ -17,9 +17,11 @@
         android:src="@drawable/team_icon"
         tools:ignore="ContentDescription"/>
 
-    <EditText
+    <me.jesuscodes.alias.util.views.EnterBlockingEditText
         android:id="@+id/item_team_enter_name"
         style="@style/editText"
+        android:inputType="textMultiLine|"
+        android:lines="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
