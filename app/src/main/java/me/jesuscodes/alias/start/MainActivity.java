@@ -37,7 +37,10 @@ public class MainActivity extends BaseActivity implements GameActionsListener {
         setSupportActionBar(mToolbar);
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new CreateTeamsFragment()).commit();
+                .setCustomAnimations(R.anim.abc_popup_enter, R.anim.abc_popup_exit,
+                        R.anim.abc_popup_enter, R.anim.abc_popup_exit)
+                .replace(R.id.container, new CreateTeamsFragment())
+                .commit();
     }
 
     @Override
@@ -47,7 +50,10 @@ public class MainActivity extends BaseActivity implements GameActionsListener {
         sPlayingTeams = teams;
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new GamePlayFragment()).commit();
+                .replace(R.id.container, new GamePlayFragment())
+                .setCustomAnimations(R.anim.abc_popup_enter, R.anim.abc_popup_exit,
+                        R.anim.abc_popup_enter, R.anim.abc_popup_exit)
+                .commit();
 
         mToolbar.setBackgroundColor(ColorUtil.get(android.R.color.transparent));
         mToolbar.setTitle("");
@@ -61,7 +67,10 @@ public class MainActivity extends BaseActivity implements GameActionsListener {
         sCurrentIndex++;
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new GamePlayFragment()).commit();
+                .setCustomAnimations(R.anim.abc_popup_enter, R.anim.abc_popup_exit,
+                        R.anim.abc_popup_enter, R.anim.abc_popup_exit)
+                .replace(R.id.container, new GamePlayFragment())
+                .commit();
 
         mToolbar.setBackgroundColor(ColorUtil.get(android.R.color.transparent));
         mToolbar.setTitle("");
@@ -73,7 +82,10 @@ public class MainActivity extends BaseActivity implements GameActionsListener {
     public void onFinishGame() {
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new ResultGameFragment()).commit();
+                .setCustomAnimations(R.anim.abc_popup_enter, R.anim.abc_popup_exit,
+                        R.anim.abc_popup_enter, R.anim.abc_popup_exit)
+                .replace(R.id.container, new ResultGameFragment())
+                .commit();
 
         mToolbar.setBackgroundColor(ColorUtil.get(R.color.color_primary));
         mToolbar.setTitle("Game results");
@@ -87,7 +99,10 @@ public class MainActivity extends BaseActivity implements GameActionsListener {
         sPlayingTeams = teams;
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new ResultTeamFragment()).commit();
+                .setCustomAnimations(R.anim.abc_popup_enter, R.anim.abc_popup_exit,
+                        R.anim.abc_popup_enter, R.anim.abc_popup_exit)
+                .replace(R.id.container, new ResultTeamFragment())
+                .commit();
 
         mToolbar.setBackgroundColor(ColorUtil.get(R.color.color_primary));
         mToolbar.setTitle(
@@ -107,7 +122,10 @@ public class MainActivity extends BaseActivity implements GameActionsListener {
     public void onRecreateGame() {
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new CreateTeamsFragment()).commit();
+                .setCustomAnimations(R.anim.abc_popup_enter, R.anim.abc_popup_exit,
+                        R.anim.abc_popup_enter, R.anim.abc_popup_exit)
+                .replace(R.id.container, new CreateTeamsFragment())
+                .commit();
 
         mToolbar.setBackgroundColor(ColorUtil.get(android.R.color.transparent));
         mToolbar.setTitle("");

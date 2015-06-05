@@ -39,7 +39,7 @@ public class ResultFooterHolder extends RecyclerView.ViewHolder {
         mReplay = (Button) itemView.findViewById(R.id.res_footer_replay);
         mNewGame = (Button) itemView.findViewById(R.id.res_footer_new_game);
 
-        mShareLink = "http://play.google.com/store/apps/details?id=" + mRoot.getPackageName();
+        mShareLink = "http://jesuscodes.me/alias";
 
         initButtons();
     }
