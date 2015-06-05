@@ -62,7 +62,7 @@ public class ResultTeamFragment extends BaseFragment {
         mWordsList.setLayoutManager(linearLayoutManager);
         mWordsList.setAdapter(adapter);
 
-        mNextTeam = (Button) findViewById(R.id.res_footer_replay);
+        mNextTeam = (Button) findViewById(R.id.team_res_next);
         mNextTeam.setText(isFinish() ? "Show results" : "Start new round!");
 
         mNextTeam.setOnClickListener(new View.OnClickListener() {

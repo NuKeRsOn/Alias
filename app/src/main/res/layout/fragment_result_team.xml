@@ -5,11 +5,11 @@
              tools:context="me.jesuscodes.alias.game.ResultTeamFragment">
 
     <Button
-        android:id="@+id/res_footer_replay"
+        android:id="@+id/team_res_next"
         android:layout_width="match_parent"
         android:layout_height="?listPreferredItemHeight"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/button_background"
+        android:background="@drawable/background_button"
         android:gravity="start|center_vertical"
         android:padding="16dp"
         android:textSize="16sp"
@@ -21,6 +21,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_above="@id/res_footer_replay"/>
+        android:layout_above="@id/team_res_next"/>
 
 </RelativeLayout>

@@ -22,6 +22,8 @@ import me.jesuscodes.alias.util.base.BaseActivity;
 public class MainActivity extends BaseActivity implements GameActionsListener {
 
     private static ArrayList<AliasTeam> sPlayingTeams = new ArrayList<>();
+
+    // unsorted teams
     private static ArrayList<AliasTeam> sClearTeams = new ArrayList<>();
     private static AliasDictionary sDictionary = Dictionaries.getDictionary();
     private static int sCurrentIndex;
@@ -43,11 +45,12 @@ public class MainActivity extends BaseActivity implements GameActionsListener {
                 .commit();
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public void onStartGame(ArrayList<AliasTeam> teams) {
 
-        sClearTeams = teams;
         sPlayingTeams = teams;
+        sClearTeams = (ArrayList<AliasTeam>) teams.clone();
 
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new GamePlayFragment())
@@ -93,6 +96,7 @@ public class MainActivity extends BaseActivity implements GameActionsListener {
         setSupportActionBar(mToolbar);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public void onFinishRound(ArrayList<AliasTeam> teams) {
 
@@ -115,11 +119,14 @@ public class MainActivity extends BaseActivity implements GameActionsListener {
     @Override
     public void onRestartGame() {
 
+        refresh();
         onStartGame(sClearTeams);
     }
 
     @Override
     public void onRecreateGame() {
+
+        refresh();
 
         getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(R.anim.abc_popup_enter, R.anim.abc_popup_exit,
@@ -154,5 +161,10 @@ public class MainActivity extends BaseActivity implements GameActionsListener {
         return (sCurrentIndex + 1) == sPlayingTeams.size();
     }
 
+    private static void refresh() {
+
+        for (AliasTeam t : sClearTeams) t.clearWords();
+        sCurrentIndex = 0;
+    }
 }
 

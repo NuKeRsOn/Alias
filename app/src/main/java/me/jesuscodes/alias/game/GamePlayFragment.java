@@ -2,8 +2,10 @@ package me.jesuscodes.alias.game;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +32,7 @@ import static me.jesuscodes.alias.start.MainActivity.getPlayingTeams;
 public class GamePlayFragment extends BaseFragment {
 
     private GameActionsListener mGameActionsListener;
+    private Vibrator mVibrator;
 
     //region Game process data
 
@@ -116,6 +119,8 @@ public class GamePlayFragment extends BaseFragment {
 
     private void initGameProcess() {
 
+        mVibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+
         mGameProcess = (RelativeLayout) findViewById(R.id.game_process);
 
         mTimeLeftProgress = (ProgressBar) findViewById(R.id.prc_timer_progress);
@@ -129,6 +134,7 @@ public class GamePlayFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
 
+                mVibrator.vibrate(10);
                 mCurrentWord.setGuessed(true);
                 mCurrentTeam.addWord(mCurrentWord);
                 nextWord();
@@ -140,6 +146,7 @@ public class GamePlayFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
 
+                mVibrator.vibrate(20);
                 mCurrentWord.setGuessed(false);
                 mCurrentTeam.addWord(mCurrentWord);
                 nextWord();

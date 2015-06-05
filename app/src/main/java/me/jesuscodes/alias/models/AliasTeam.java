@@ -39,6 +39,12 @@ public class AliasTeam {
         mWords.add(word);
     }
 
+    public void clearWords() {
+
+        mGuessedCount = 0;
+        mWords.clear();
+    }
+
     public ArrayList<AliasWord> getWords() {
         return mWords;
     }

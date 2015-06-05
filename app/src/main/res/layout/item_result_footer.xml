@@ -24,9 +24,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/res_footer_message"
         android:layout_margin="8dp"
-        android:scaleType="centerInside"
-        android:adjustViewBounds="true"
-        android:background="?attr/selectableItemBackground"
+        android:scaleType="centerCrop"
         android:src="@drawable/fb"
         tools:ignore="ContentDescription"/>
 
@@ -38,9 +36,7 @@
         android:layout_toStartOf="@id/res_footer_facebook"
         android:layout_below="@id/res_footer_message"
         android:layout_margin="8dp"
-        android:scaleType="centerInside"
-        android:adjustViewBounds="true"
-        android:background="?attr/selectableItemBackground"
+        android:scaleType="centerCrop"
         android:src="@drawable/vk"
         tools:ignore="ContentDescription"/>
 
@@ -52,9 +48,7 @@
         android:layout_toEndOf="@id/res_footer_facebook"
         android:layout_below="@id/res_footer_message"
         android:layout_margin="8dp"
-        android:scaleType="centerInside"
-        android:adjustViewBounds="true"
-        android:background="?attr/selectableItemBackground"
+        android:scaleType="centerCrop"
         android:src="@drawable/twitter"
         tools:ignore="ContentDescription"/>
 
