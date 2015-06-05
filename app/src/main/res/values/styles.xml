@@ -16,7 +16,7 @@
         <!--<item name="actionMenuTextColor">#fff</item>&lt;!&ndash; actionbar buttons text color &ndash;&gt;-->
         <item name="android:textColorPrimary">#fff</item><!-- actionbar text color -->
         <item name="android:textColorSecondary">#444</item><!-- actionbar buttons color -->
-        <item name="colorControlNormal">@color/color_primary</item>
+        <item name="colorControlNormal">#fff</item>
     </style>
 
     <style name="actionbar_popup" parent="ThemeOverlay.AppCompat.Light"/>

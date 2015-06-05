@@ -19,4 +19,8 @@ public class Toaster {
 
         Toast.makeText(sContext, words, Toast.LENGTH_SHORT).show();
     }
+
+    public static void say(int resid) {
+        Toast.makeText(sContext, resid, Toast.LENGTH_SHORT).show();
+    }
 }

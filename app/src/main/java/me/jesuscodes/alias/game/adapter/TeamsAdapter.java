@@ -86,7 +86,10 @@ public class TeamsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
                 @Override
                 public void onClick(View v) {
-
+                    if(!checkAddingAvailable()){
+                        // todo notify reason?
+                        return;
+                    }
                     mAliasTeamList.add(new AliasTeam(""));
 
                     if (mAliasTeamList.size() == 5)
@@ -97,6 +100,16 @@ public class TeamsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 }
             });
         }
+    }
+
+    private boolean checkAddingAvailable() {
+        for (AliasTeam aliasTeam : mAliasTeamList) {
+            String teamname = aliasTeam.getName();
+            if(teamname.isEmpty() &&  !teamname.matches(".*\\w.*")){
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override

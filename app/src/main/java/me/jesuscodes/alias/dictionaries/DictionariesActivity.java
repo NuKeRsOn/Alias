@@ -17,6 +17,7 @@ import com.anjlab.android.iab.v3.BillingProcessor;
 import com.anjlab.android.iab.v3.TransactionDetails;
 
 import me.jesuscodes.alias.R;
+import me.jesuscodes.alias.util.Toaster;
 import me.jesuscodes.alias.util.base.BaseActivity;
 
 public class DictionariesActivity extends BaseActivity implements BillingProcessor.IBillingHandler {
@@ -42,7 +43,7 @@ public class DictionariesActivity extends BaseActivity implements BillingProcess
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dictionaries);
 
-        mToolbar.setNavigationIcon(R.drawable.ic_action_navigation_arrow_back);
+        mToolbar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
         setSupportActionBar(mToolbar);
 
         prefs = getSharedPreferences("dictionaries", MODE_MULTI_PROCESS);
@@ -53,6 +54,10 @@ public class DictionariesActivity extends BaseActivity implements BillingProcess
         dictionariesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if((position!=0 && position!=5)&&billingProcessor.isInitialized()){
+                    Toaster.say(R.string.dictionaries_wait_init);
+                    return;
+                }
                 switch (position){
                     case 0:
                         Uri uri = Uri.parse("market://details?id=" + getPackageName());
@@ -152,10 +157,10 @@ public class DictionariesActivity extends BaseActivity implements BillingProcess
 
         @Override
         public boolean isEnabled(int position) {
-            if(position==0){
+            if(position==0 || position==5){
                 return true;
             }
-            return !dictionaryActivated(position) && billingProcessor.isInitialized();
+            return !dictionaryActivated(position);
         }
 
         @Override

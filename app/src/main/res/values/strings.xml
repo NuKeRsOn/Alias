@@ -50,6 +50,7 @@
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dictionaries_wait_init">Wait till purchases will initialize</string>
 
 
 </resources>
