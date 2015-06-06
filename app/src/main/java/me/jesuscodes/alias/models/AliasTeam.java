@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class AliasTeam {
 
     private int mGuessedCount;
+    private int mUnGuessedCount;
     private int mTeamColor;
     private String mTeamName;
     private ArrayList<AliasWord> mWords = new ArrayList<>();
@@ -35,6 +36,7 @@ public class AliasTeam {
     public void addWord(AliasWord word) {
 
         if (word.isGuessed()) mGuessedCount++;
+        else mUnGuessedCount++;
 
         mWords.add(word);
     }
@@ -42,6 +44,7 @@ public class AliasTeam {
     public void clearWords() {
 
         mGuessedCount = 0;
+        mUnGuessedCount = 0;
         mWords.clear();
     }
 
@@ -49,7 +52,15 @@ public class AliasTeam {
         return mWords;
     }
 
+    public int getWordsCount() {
+        return mWords.size();
+    }
+
     public int getGuessedCount() {
         return mGuessedCount;
+    }
+
+    public int getUnGuessedCount() {
+        return mUnGuessedCount;
     }
 }

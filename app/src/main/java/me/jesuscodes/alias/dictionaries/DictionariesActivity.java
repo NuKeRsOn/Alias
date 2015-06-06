@@ -20,6 +20,8 @@ import me.jesuscodes.alias.R;
 import me.jesuscodes.alias.util.Toaster;
 import me.jesuscodes.alias.util.base.BaseActivity;
 
+import static me.jesuscodes.alias.AliasApplication.sendEvent;
+
 public class DictionariesActivity extends BaseActivity implements BillingProcessor.IBillingHandler {
 
     private static final String DICTIONARY_GEO = "geo";
@@ -27,6 +29,7 @@ public class DictionariesActivity extends BaseActivity implements BillingProcess
     private static final String DICTIONARY_BASIC_2 = "b2";
     private static final String DICTIONARY_FULL = "full";
     private static final String DICTIONARY_SEX = "sex";
+    private static final String EVENT_TAG = "Dictionaries";
     private BillingProcessor billingProcessor;
     private DictionariesAdapter adapter = new DictionariesAdapter();
     private SharedPreferences prefs;
@@ -60,6 +63,8 @@ public class DictionariesActivity extends BaseActivity implements BillingProcess
                 }
                 switch (position){
                     case 0:
+                        sendEvent(EVENT_TAG, "Click", DICTIONARY_SEX);
+
                         Uri uri = Uri.parse("market://details?id=" + getPackageName());
                         Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
                         try {
@@ -75,18 +80,23 @@ public class DictionariesActivity extends BaseActivity implements BillingProcess
                         adapter.notifyDataSetChanged();
                         break;
                     case 1:
+                        sendEvent(EVENT_TAG, "Click", DICTIONARY_GEO);
                         buy(DICTIONARY_GEO);
                         break;
                     case 2:
+                        sendEvent(EVENT_TAG, "Click", DICTIONARY_BASIC_1);
                         buy(DICTIONARY_BASIC_1);
                         break;
                     case 3:
+                        sendEvent(EVENT_TAG, "Click", DICTIONARY_BASIC_2);
                         buy(DICTIONARY_BASIC_2);
                         break;
                     case 4:
+                        sendEvent(EVENT_TAG, "Click", DICTIONARY_FULL);
                         buy(DICTIONARY_FULL);
                         break;
                     case 5:
+                        sendEvent(EVENT_TAG, "Share", "Happy Santa");
                         Intent shareIntent = new Intent();
                         shareIntent.setAction(Intent.ACTION_SEND);
                         shareIntent.putExtra(Intent.EXTRA_TEXT, ("http://jesuscodes.me/alias/"));

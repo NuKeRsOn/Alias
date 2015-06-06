@@ -16,15 +16,19 @@ import me.jesuscodes.alias.models.AliasTeam;
 import me.jesuscodes.alias.util.ColorUtil;
 import me.jesuscodes.alias.util.base.BaseActivity;
 
+import static me.jesuscodes.alias.AliasApplication.sendEvent;
+
 
 // TODO needs some refactoring here
 @SuppressWarnings("ConstantConditions")
 public class MainActivity extends BaseActivity implements GameActionsListener {
 
-    private static ArrayList<AliasTeam> sPlayingTeams = new ArrayList<>();
-
     // unsorted teams
     private static ArrayList<AliasTeam> sClearTeams = new ArrayList<>();
+
+    // sortable teams
+    private static ArrayList<AliasTeam> sPlayingTeams = new ArrayList<>();
+
     private static AliasDictionary sDictionary = Dictionaries.getDictionary();
     private static int sCurrentIndex;
 
@@ -49,8 +53,11 @@ public class MainActivity extends BaseActivity implements GameActionsListener {
     @Override
     public void onStartGame(ArrayList<AliasTeam> teams) {
 
+        sendEvent("Start game", "Counter", "Teams count", teams.size());
+
         sPlayingTeams = teams;
         sClearTeams = (ArrayList<AliasTeam>) teams.clone();
+
 
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new GamePlayFragment())
@@ -84,6 +91,8 @@ public class MainActivity extends BaseActivity implements GameActionsListener {
     @Override
     public void onFinishGame() {
 
+        sendWordCounts();
+
         getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(R.anim.abc_popup_enter, R.anim.abc_popup_exit,
                         R.anim.abc_popup_enter, R.anim.abc_popup_exit)
@@ -110,7 +119,10 @@ public class MainActivity extends BaseActivity implements GameActionsListener {
 
         mToolbar.setBackgroundColor(ColorUtil.get(R.color.color_primary));
         mToolbar.setTitle(
-                String.format("Words guessed by %s", getCurrentTeam().getName())
+                String.format("Words guessed by %s: %d",
+                        getCurrentTeam().getName(),
+                        getCurrentTeam().getGuessedCount()
+                )
         );
 
         setSupportActionBar(mToolbar);
@@ -165,6 +177,23 @@ public class MainActivity extends BaseActivity implements GameActionsListener {
 
         for (AliasTeam t : sClearTeams) t.clearWords();
         sCurrentIndex = 0;
+    }
+
+    private void sendWordCounts() {
+
+        int correctWords = 0;
+        int incorrectWords = 0;
+
+        for (AliasTeam t : sPlayingTeams) {
+
+            correctWords += t.getGuessedCount();
+            incorrectWords += t.getUnGuessedCount();
+        }
+
+        sendEvent("Finish game", "Counter", "All words", (correctWords + incorrectWords));
+        
+        sendEvent("Finish game", "Counter", "Correct words", correctWords);
+        sendEvent("Finish game", "Counter", "Incorrect words", incorrectWords);
     }
 }
 

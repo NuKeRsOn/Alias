@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import me.jesuscodes.alias.R;
 import me.jesuscodes.alias.game.GameActionsListener;
 
+import static me.jesuscodes.alias.AliasApplication.sendEvent;
+
 /**
  * Created by alex
  */
@@ -51,6 +53,7 @@ public class ResultFooterHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
 
+                sendEvent("Result screen", "Click", "Replay");
                 mActionsListener.onRestartGame();
             }
         });
@@ -60,6 +63,7 @@ public class ResultFooterHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
 
+                sendEvent("Result screen", "Click", "Restart");
                 mActionsListener.onRecreateGame();
             }
         });
@@ -69,6 +73,7 @@ public class ResultFooterHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
 
+                sendEvent("Result screen", "Share", "VK");
                 share(SocialNetwork.VK);
             }
         });
@@ -78,6 +83,7 @@ public class ResultFooterHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
 
+                sendEvent("Result screen", "Share", "Twitter");
                 share(SocialNetwork.TWITTER);
             }
         });
@@ -87,6 +93,7 @@ public class ResultFooterHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
 
+                sendEvent("Result screen", "Share", "Facebook");
                 share(SocialNetwork.FACEBOOK);
 
             }

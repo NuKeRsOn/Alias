@@ -3,6 +3,8 @@ package me.jesuscodes.alias;
 import android.app.Application;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import me.jesuscodes.alias.util.ColorUtil;
 import me.jesuscodes.alias.util.Dimen;
@@ -14,17 +16,19 @@ import me.jesuscodes.alias.util.Toaster;
  */
 public class AliasApplication extends Application {
 
-    private static AliasApplication application;
+    private static AliasApplication sApplication;
+    private static Tracker sTracker;
 
     @Override
     public void onCreate() {
         super.onCreate();
 
-        application = this;
+        sApplication = this;
 
         if (!BuildConfig.DEBUG) {
+
             GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
-            analytics.newTracker(me.jesuscodes.alias.R.xml.global_tracker);
+            sTracker = analytics.newTracker(me.jesuscodes.alias.R.xml.global_tracker);
         }
 
         Dimen.init(this);
@@ -34,6 +38,29 @@ public class AliasApplication extends Application {
     }
 
     public static AliasApplication app(){
-        return application;
+        return sApplication;
+    }
+
+    public static void sendEvent(String category, String action, String label, long value) {
+
+        if (sTracker != null)
+            sTracker.send(new HitBuilders.EventBuilder()
+                            .setCategory(category)
+                            .setAction(action)
+                            .setLabel(label)
+                            .setValue(value)
+                            .build()
+        );
+    }
+
+    public static void sendEvent(String category, String action, String label) {
+
+        if (sTracker != null)
+            sTracker.send(new HitBuilders.EventBuilder()
+                            .setCategory(category)
+                            .setAction(action)
+                            .setLabel(label)
+                            .build()
+            );
     }
 }
